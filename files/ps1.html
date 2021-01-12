@@ -1,0 +1,68 @@
+<html manifest="offline.manifest">
+  <head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <title>PlayStation®3</title>
+ <style>
+      body {
+    background: #4169E1;
+    background-size: 100%;
+	}
+	img{  
+    width: 120;
+    height: 120;
+	margin: 0.25em;
+	transition: all 0.3s linear;
+	border: solid 4px transparent;
+	outline: solid 1px transparent;
+	}
+    img:hover {
+	border: solid 4px #FDF5E6;
+	outline: solid 1px #FDF5E6;
+    transform: scale(1.2,1.2);
+	}
+    img:active {
+	border: solid 4px #DEB887;
+	outline: solid 1px #DEB887;
+    transition: background 0s;
+    }
+    tr, th {
+    width: 200px;
+    position: absolute; 
+	margin-left: -10px;
+    } 
+  </style>	
+  <span class="token punctuation"></span></code></pre>
+  <input class="form-control" id="search-text" onkeyup="tableSearch()" placeholder="Поиск Игры" type="text"><table class="table table-striped" id="info-table">
+	<tr></tr>
+	<tr style="display: none;"><th><a id="Quake 2" href="ps1/quake_2.html" ><img src="ps1/img/quake_2.jpg" alt="button"></a></th></tr>
+
+	<tr><th><a ><img src="ps1/img/PS1.jpg" ></a></th></tr>
+	
+	 </table>
+	 <div style="margin-left: 155px">
+	<a href="ps1/quake_2.html" ><img src="ps1/img/quake_2.jpg" alt="button"></a>
+
+	</div>
+	 <script>
+	 function tableSearch() {
+    var phrase = document.getElementById('search-text');
+    var table = document.getElementById('info-table');
+    var regPhrase = new RegExp(phrase.value, 'i');
+    var flag = false;
+    for (var i = 1; i < table.rows.length; i++) {
+        flag = false;
+        for (var j = table.rows[i].cells.length - 1; j >= 0; j--) {
+            flag = regPhrase.test(table.rows[i].cells[j].innerHTML);
+            if (flag) break;
+        }
+        if (flag) {
+            table.rows[i].style.display = "";
+        } else {
+            table.rows[i].style.display = "none";
+        }
+
+    }
+}
+</script>
+</body>
+ </html>
