@@ -29,7 +29,25 @@
     position: absolute; 
 	margin-left: -10px;
     } 
-  </style>	
+	.container {
+    max-width: 1270px;
+    margin: auto;
+    height: 1000px;
+    }
+   .c {
+    border: 1px solid #333; /* Рамка */
+    display: inline-block;
+    padding: 5px 15px; /* Поля */
+    text-decoration: none; /* Убираем подчёркивание */
+    color: #000; /* Цвет текста */
+    }
+   .c:hover {
+    box-shadow: 0 0 5px rgba(0,0,0,0.3); /* Тень */
+    background: linear-gradient(to bottom, #fcfff4, #e9e9ce); /* Градиент */
+    color: #a00;
+    }
+  </style>
+  <div id="UP" class="container">
   <span class="token punctuation"></span></code></pre>
   <input class="form-control" id="search-text" onkeyup="tableSearch()" placeholder="Поиск Игры" type="text"><table class="table table-striped" id="info-table">
 	<tr></tr>
@@ -53,6 +71,7 @@
 	<a href="ps1/Medal_of_Honor_Underground.html" ><img src="ps1/img/Medal_of_Honor_Underground.jpg" alt="button"></a> 
 	<a href="ps1/Medal_of_Honor.html" ><img src="ps1/img/Medal_of_Honor.jpg" alt="button"></a> 
 
+	</div>
 	</div>
 	 <script>
 	 function tableSearch() {

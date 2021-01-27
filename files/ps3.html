@@ -30,12 +30,24 @@
 	margin-left: -0px;
     } 
 	.container {
-  max-width: 1270px;
-  margin: auto;
-  height: 1000px;
-}
+    max-width: 1270px;
+    margin: auto;
+    height: 1000px;
+    }
+   .c {
+    border: 1px solid #333; /* Рамка */
+    display: inline-block;
+    padding: 5px 15px; /* Поля */
+    text-decoration: none; /* Убираем подчёркивание */
+    color: #000; /* Цвет текста */
+    }
+   .c:hover {
+    box-shadow: 0 0 5px rgba(0,0,0,0.3); /* Тень */
+    background: linear-gradient(to bottom, #fcfff4, #e9e9ce); /* Градиент */
+    color: #a00;
+    }
   </style>	
-  <div class="container">
+  <div id="UP" class="container">
   <span class="token punctuation"></span></code></pre>
   <input style="margin-left: 15px" class="form-control" id="search-text" onkeyup="tableSearch()" placeholder="Поиск Игры" type="text"><table class="table table-striped" id="info-table">
 	<tr></tr>
@@ -223,8 +235,8 @@
 	<a href="ps3/WATCH_DOGS.html" ><img src="ps3/img/WATCH_DOGS.jpg" alt="button"></a> 
 	<a href="ps3/Demon_s_Souls._Black_Phantom_Edition.html" ><img src="ps3/img/Demon_s_Souls._Black_Phantom_Edition.jpg" alt="button"></a> 
 	<a href="ps3/LittleBigPlanet_3.html" ><img src="ps3/img/LittleBigPlanet_3.jpg" alt="button"></a> 
-
 	<a href="ps3/LittleBigPlanet_2.html" ><img src="ps3/img/LittleBigPlanet_2.jpg" alt="button"></a> 
+	
 	<a href="ps3/Medal_of_Honor_Warfighter.html" ><img src="ps3/img/Medal_of_Honor_Warfighter.jpg" alt="button"></a> 
 	<a href="ps3/MAFIA_2.html" ><img src="ps3/img/MAFIA_2.jpg" alt="button"></a> 
 	<a href="ps3/Resident_Evil_6.html" ><img src="ps3/img/Resident_Evil_6.jpg" alt="button"></a> 
@@ -302,7 +314,11 @@
 	<a href="ps3/South_Park_The_Stick_of_Truth.html" ><img src="ps3/img/South_Park_The_Stick_of_Truth.jpg" alt="button"></a> 
 
 	</div>
+	 <ul align="center">
+    <button><a href="#UP" class="c">На Верх</a></button>
+   </ul>
 	</div>
+
 	 <script>
 	 function tableSearch() {
     var phrase = document.getElementById('search-text');
