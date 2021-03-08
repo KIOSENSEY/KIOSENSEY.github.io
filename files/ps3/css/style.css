@@ -1,8 +1,11 @@
 	img{  
 	margin-right: 35px;
 	cursor:none;
-    width: 320;
-    height: 370;
+    width: 390;
+    height: 460;
+	border: solid 4px #FDF5E6;
+	border-radius: 10px
+    
 	}
 	h1{
     text-shadow: black 1px 1px 0, black -1px -1px 0,
