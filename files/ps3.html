@@ -24,39 +24,23 @@
 	border: solid 4px #DEB887;
     transition: background 0s;
     }
-    tr, th {
-    width: 200px;
-    position: absolute; 
-	margin-left: -0px;
-    } 
 	.container {
     max-width: 1270px;
     margin: auto;
     height: 1000px;
     }
-   .c {
-    border: 1px solid #333; /* Рамка */
-    display: inline-block;
-    padding: 5px 15px; /* Поля */
-    text-decoration: none; /* Убираем подчёркивание */
-    color: #000; /* Цвет текста */
-    }
-   .c:hover {
-    box-shadow: 0 0 5px rgba(0,0,0,0.3); /* Тень */
-    background: linear-gradient(to bottom, #fcfff4, #e9e9ce); /* Градиент */
-    color: #a00;
-    }
-	   #mySearch {
-	   width: 89%;
+	 #mySearch {
+	 width: 100%;
      font-size: 15px;
      padding: 5px;
      border: 2px solid #ddd;
 	}
   </style>	
-  	<input style="margin-left: 86px" type="text" id="mySearch" onkeyup="myFunction()" placeholder="Поиск Игры..." title="Type in a category"></input>
-   <ul id="myMenu">
-   <div id="UP" class="container">
-	<div style="margin-left: 30px" >
+    <div style="align: center" class="container">
+	   <div style="align: center">
+          <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Поиск Игры..." title="Type in a category"></input>
+	   </div>
+    <ul id="myMenu">
 	<b><a href="ps3/The_Last_of_Us.html" ><img src="ps3/img/The_Last_of_Us.jpg" alt="button"></a></b>
 	<b><a href="ps3/Heavy_Rain_Move_Edition.html" ><img src="ps3/img/Heavy_Rain_Move_Edition.jpg" alt="button"></a></b>
 	<b><a href="ps3/Beyond_Two_Souls.html" ><img src="ps3/img/Beyond_Two_Souls.jpg" alt="button"></a></b> 
@@ -332,14 +316,9 @@
 	<b><a href="ps3/Attack_on_Titan_Wings_of_Freedom.html" ><img src="ps3/img/Attack_on_Titan_Wings_of_Freedom.jpg" alt="button"></a></b> 
 	<b><a href="ps3/Shift_2_Unleashed.html" ><img src="ps3/img/Shift_2_Unleashed.jpg" alt="button"></a></b> 
 	<b><a href="ps3/Supremacy_MMA.html" ><img src="ps3/img/Supremacy_MMA.jpg" alt="button"></a></b> 
-
-	</div>
+	
 	</ul>
-	 <ul align="center">
-    <button><a href="#UP" class="c">На Верх</a></button>
-   </ul>
 	</div>
-
 <script>
 function myFunction() {
   // Объявить переменные
