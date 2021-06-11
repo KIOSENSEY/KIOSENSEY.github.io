@@ -1,0 +1,42 @@
+<html manifest="offline.manifest">
+	<head>
+		<script src="utils.js"></script>
+		<script src="int64.js"></script>
+		<script src="ps4.js"></script>
+	</head>
+	<body>
+		<button id="input1" onfocus="handle2()"></button>
+		<button id="input2"></button>
+		<button id="input3" onfocus="handle2()"></button>
+		<select id="select1">
+			<option value="value1">Value1</option>
+		</select>
+	<script>
+function print(){}
+var scriptCode = '';
+function preloadScripts(lst)
+{
+    for(var i = 0; i < lst.length; i++)
+    {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', lst[i], false);
+    xhr.send('');
+    scriptCode += xhr.responseText + '\n';
+    }
+}
+window.midExploit = function()
+{
+    preloadScripts(['jb.js', 'toolbox.js', 'final.js'], go);
+}
+window.postExploit = function()
+{
+			setTimeout(function()
+			{
+    document.cookie = 'kex=0';
+    eval.call(window, scriptCode);
+				}, 100);
+};
+
+</script>
+	</body>
+</html>
