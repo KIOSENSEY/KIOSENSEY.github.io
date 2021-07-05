@@ -380,6 +380,17 @@ var gadget6_addr_487=0x423B18;
 var gadget7_addr_487=0x628594;
 var gadget8_addr_487=0x2BACB8;
 
+//CEX 4.88
+var toc_addr_487 = 0x6F5558;
+var gadget1_addr_487=0x0D9684;
+var gadget2_addr_487=0x097604;
+var gadget3_addr_487=0x60EFD8;
+var gadget4_addr_487=0x19D3B0;
+var gadget5_addr_487=0x42C778;
+var gadget6_addr_487=0x423B18;
+var gadget7_addr_487=0x628594;
+var gadget8_addr_487=0x2BACB8;
+
 function asciiAt(str, i){
 	return str.charCodeAt(i)&0xFF;
 }
@@ -820,7 +831,7 @@ function findJsVariableOffset(name,exploit_data,base,size)
 //####################################################################################################################################################################
 function ps3chk(){
 
-	var fwCompat = ["4.00","4.10","4.11","4.20","4.21","4.25","4.30","4.31","4.40","4.41","4.45","4.46","4.50","4.53","4.55","4.60","4.65","4.66","4.70","4.75","4.76","4.78","4.80","4.81","4.82","4.83","4.84","4.85","4.86","4.87"];
+	var fwCompat = ["4.00","4.10","4.11","4.20","4.21","4.25","4.30","4.31","4.40","4.41","4.45","4.46","4.50","4.53","4.55","4.60","4.65","4.66","4.70","4.75","4.76","4.78","4.80","4.81","4.82","4.83","4.84","4.85","4.86","4.87","4.88"];
 	var ua = navigator.userAgent;
 	var uaStringCheck = ua.substring(ua.indexOf("5.0 (") + 5, ua.indexOf(") Apple") - 7);
 	var fwVersion = ua.substring(ua.indexOf("5.0 (") + 19, ua.indexOf(") Apple"));
