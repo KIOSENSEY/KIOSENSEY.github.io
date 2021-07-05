@@ -381,15 +381,15 @@ var gadget7_addr_487=0x628594;
 var gadget8_addr_487=0x2BACB8;
 
 //CEX 4.88
-var toc_addr_487 = 0x6F5558;
-var gadget1_addr_487=0x0D9684;
-var gadget2_addr_487=0x097604;
-var gadget3_addr_487=0x60EFD8;
-var gadget4_addr_487=0x19D3B0;
-var gadget5_addr_487=0x42C778;
-var gadget6_addr_487=0x423B18;
-var gadget7_addr_487=0x628594;
-var gadget8_addr_487=0x2BACB8;
+var toc_addr_488 = 0x6F5558;
+var gadget1_addr_488=0x0D9684;
+var gadget2_addr_488=0x097604;
+var gadget3_addr_488=0x60EFD8;
+var gadget4_addr_488=0x19D3B0;
+var gadget5_addr_488=0x42C778;
+var gadget6_addr_488=0x423B18;
+var gadget7_addr_488=0x628594;
+var gadget8_addr_488=0x2BACB8;
 
 function asciiAt(str, i){
 	return str.charCodeAt(i)&0xFF;
@@ -1229,6 +1229,19 @@ function ps3chk(){
 					gadget6_addr=gadget6_addr_487;
 					gadget7_addr=gadget7_addr_487;
 					gadget8_addr=gadget8_addr_487;					
+					break;
+					
+				case fwCompat[30]:
+					alert(msgHFW);
+					toc_addr = toc_addr_488;
+					gadget1_addr=gadget1_addr_488;
+					gadget2_addr=gadget2_addr_488;
+					gadget3_addr=gadget3_addr_488;
+					gadget4_addr=gadget4_addr_488;
+					gadget5_addr=gadget5_addr_488;
+					gadget6_addr=gadget6_addr_488;
+					gadget7_addr=gadget7_addr_488;
+					gadget8_addr=gadget8_addr_488;					
 					break;
 					
 				default:
