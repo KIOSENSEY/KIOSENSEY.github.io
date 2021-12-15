@@ -10,14 +10,17 @@
 	}
   </style>
  <div align="center">
-	<a href onclick="HEN(); return false" ><img src="files/img/hen" alt="button"></a>
+	<a href onclick="GOLDHEN(); return false" ><img src="files/img/goldhen" alt="button"></a>
 	<a href onclick="WEBRTE(); return false" ><img src="files/img/webrte" alt="button"></a>
 	<a href onclick="FTP(); return false" ><img src="files/img/ftp" alt="button"></a>
-    <a href onclick="DUMPER(); return false" ><img src="files/img/dumper"alt="button"></a>	
+    <a href onclick="APPDUMPER(); return false" ><img src="files/img/appdumper"alt="button"></a>	
     <a href onclick="DISABLEUPDATE(); return false" ><img src="files/img/disableupdates"alt="button"></a>	
 	<a href onclick="ENABLEUPDATE(); return false" ><img src="files/img/enableupdates" alt="button"></a>
 	<a href onclick="DEBUG(); return false" ><img src="files/img/debug" alt="button"></a>
 	<a href onclick="KERNELDUMPER(); return false" ><img src="files/img/kerneldumper" alt="button"></a>
+	<a href onclick="APP2USB(); return false" ><img src="files/img/app2usb" alt="button"></a>
+	<a href onclick="BACKUP(); return false" ><img src="files/img/backup" alt="button"></a>
+	<a href onclick="HISTORYBLOCKER(); return false" ><img src="files/img/historyblocker" alt="button"></a>
  </div>
 
 	<script src="files/js/int64.js"></script>
@@ -27,7 +30,7 @@
 
 	<script>
 
-	function HEN(){
+	function GOLDHEN(){
 		let script = document.createElement('script'); script.src = "files/js/goldhen.js"; document.head.append(script);
 			setTimeout(poc, 500);
 		}
@@ -39,8 +42,8 @@
 		let script = document.createElement('script'); script.src = "files/js/ftp.js"; document.head.append(script);
 			setTimeout(poc, 500);
 		}
-	function DUMPER(){
-		let script = document.createElement('script'); script.src = "files/js/dumper.js"; document.head.append(script);
+	function APPDUMPER(){
+		let script = document.createElement('script'); script.src = "files/js/appdumper.js"; document.head.append(script);
 			setTimeout(poc, 500);
 		}
 	function DISABLEUPDATE(){
@@ -63,6 +66,18 @@
 		let script = document.createElement('script'); script.src = "files/js/kerneldumper.js"; document.head.append(script);
 			setTimeout(poc, 500);
 		}
+	function APP2USB(){
+		let script = document.createElement('script'); script.src = "files/js/app2usb.js"; document.head.append(script);
+			setTimeout(poc, 500);
+		}
+	function BACKUP(){
+		let script = document.createElement('script'); script.src = "files/js/backup.js"; document.head.append(script);
+			setTimeout(poc, 500);
+		}	
+	function HISTORYBLOCKER(){
+		let script = document.createElement('script'); script.src = "files/js/historyblocker.js"; document.head.append(script);
+			setTimeout(poc, 500);
+		}		
 	</script>
   </body>
 </html>
