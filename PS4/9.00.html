@@ -21,6 +21,7 @@
 	<a href onclick="APP2USB(); return false" ><img src="files/img/app2usb" alt="button"></a>
 	<a href onclick="BACKUP(); return false" ><img src="files/img/backup" alt="button"></a>
 	<a href onclick="HISTORYBLOCKER(); return false" ><img src="files/img/historyblocker" alt="button"></a>
+	<a href onclick="RESTORE(); return false" ><img src="files/img/restore" alt="button"></a>
  </div>
 
 	<script src="files/js/int64.js"></script>
@@ -76,6 +77,10 @@
 		}	
 	function HISTORYBLOCKER(){
 		let script = document.createElement('script'); script.src = "files/js/historyblocker.js"; document.head.append(script);
+			setTimeout(poc, 500);
+		}	
+	function RESTORE(){
+		let script = document.createElement('script'); script.src = "files/js/restore.js"; document.head.append(script);
 			setTimeout(poc, 500);
 		}		
 	</script>
