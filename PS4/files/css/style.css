@@ -6,8 +6,8 @@
 	border: solid 4px transparent;
 	}
     img:hover {
-	border: solid 4px #FDF5E6;
-	outline: solid 1px #FDF5E6;
+	border: solid 4px #D3D3D3;
+	outline: solid 1px #D3D3D3;
     transform: translateY(20px) scale(1.2,1.2);
 	}
     img:active {
