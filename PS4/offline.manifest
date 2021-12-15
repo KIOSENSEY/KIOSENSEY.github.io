@@ -17,6 +17,7 @@ files\img\gta132moding
 files\img\gta133moding
 files\img\historyblocker
 files\img\kerneldumper
+files\img\permanentuart
 files\img\restore
 files\img\rifrenamer
 files\img\toolbox
@@ -35,6 +36,7 @@ files\js\historyblocker.js
 files\js\int64.js
 files\js\kerneldumper.js
 files\js\kexploit.js
+files\js\permanentuart.js
 files\js\restore.js
 files\js\rifrenamer.js
 files\js\rop.js
