@@ -32,6 +32,7 @@ files\img\webrte
 files\js\app2usb.js
 files\js\appdumper.js
 files\js\backup.js
+files\js\debug.js
 files\js\disableupdates.js
 files\js\dumper.js
 files\js\enableupdates.js
@@ -54,3 +55,4 @@ files\js\restore.js
 files\js\rifrenamer.js
 files\js\rop.js
 files\js\webkit.js
+files\js\webrte.js
