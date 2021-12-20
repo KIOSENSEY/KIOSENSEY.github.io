@@ -2,7 +2,9 @@
 	<link rel="stylesheet" href="files/css/style.css">
 <head meta charset="utf-8" />
     <title>PlayStation®4 9.00</title>
-	<br>
+	  <script>
+
+</script>
  <div align="center">
 	<a href onclick="GOLDHEN(); return false" ><img src="files/img/goldhen" alt="button"></a>
 	<a href onclick="WEBRTE(); return false" ><img src="files/img/webrte" alt="button"></a>
@@ -18,6 +20,8 @@
 	<a href onclick="RESTORE(); return false" ><img src="files/img/restore" alt="button"></a>
 	<a href onclick="RIFRENAMER(); return false" ><img src="files/img/rifrenamer" alt="button"></a>
 	<a href onclick="PERMANENTUART(); return false" ><img src="files/img/permanentuart" alt="button"></a>
+	<a href onclick="PARENTALCONTROL(); return false" ><img src="files/img/parentalcontrol" alt="button"></a>
+	<a href onclick="MIRALOADER(); return false" ><img src="files/img/miraloader" alt="button"></a>
 	<br>
 	<a href onclick="GTA127MODING(); return false" ><img src="files/img/gta127moding" alt="button"></a>
 	<a href onclick="GTA132MODING(); return false" ><img src="files/img/gta132moding" alt="button"></a>
@@ -29,17 +33,18 @@
 	<a href onclick="LINUXLOADER4GB(); return false" ><img src="files/img/linuxloader4gb" alt="button"></a>
 	<a href onclick="LINUXLOADER5GB(); return false" ><img src="files/img/linuxloader5gb" alt="button"></a>
  </div>
-
 	<script src="files/js/int64.js"></script>
     <script src="files/js/rop.js"></script>
     <script src="files/js/kexploit.js"></script>
     <script src="files/js/webkit.js"></script>
-
-	<script>
-
+	<script src="files/js/cache.js"></script>
+	
+ <h2 align="right"><div id="ScrOverlay" class="cacheUPDbg" style="color:#00FF00"><pre id="cacheUPDtxt" class="cacheUPD" style="color:#00FF00"></pre>
+ <div id="CacheProgress"style="color:#00FF00" ><div id="CacheBar"style="color:#00FF00"></div></div></h2>
+    <script>
 	function GOLDHEN(){
 		let script = document.createElement('script'); script.src = "files/js/goldhen.js"; document.head.append(script);
-			setTimeout(poc, 700);
+			setTimeout(poc, 500);
 		}
 	function WEBRTE(){
 		let script = document.createElement('script'); script.src = "files/js/webrte.js"; document.head.append(script);
@@ -96,6 +101,14 @@
 	function PERMANENTUART(){
 		let script = document.createElement('script'); script.src = "files/js/permanentuart.js"; document.head.append(script);
 			setTimeout(poc, 500);
+		}	
+	function PARENTALCONTROL(){
+		let script = document.createElement('script'); script.src = "files/js/parentalcontrol.js"; document.head.append(script);
+			setTimeout(poc, 500);
+		}	
+	function MIRALOADER(){
+		let script = document.createElement('script'); script.src = "files/js/miraloader.js"; document.head.append(script);
+			setTimeout(poc, 500);
 		}		
 	function GTA127MODING(){
 		let script = document.createElement('script'); script.src = "files/js/gta127moding.js"; document.head.append(script);
@@ -128,7 +141,7 @@
 	function LINUXLOADER5GB(){
 		let script = document.createElement('script'); script.src = "files/js/linuxloader5gb.js"; document.head.append(script);
 			setTimeout(poc, 500);
-		}		
+		}					
 	</script>
   </body>
 </html>

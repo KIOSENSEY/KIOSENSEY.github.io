@@ -23,6 +23,8 @@ files\img\linuxloader2gb
 files\img\linuxloader3gb
 files\img\linuxloader4gb
 files\img\linuxloader5gb
+files\img\miraloader
+files\img\parentalcontrol
 files\img\permanentuart
 files\img\restore
 files\img\rifrenamer
@@ -31,6 +33,7 @@ files\img\webrte
 files\js\app2usb.js
 files\js\appdumper.js
 files\js\backup.js
+files\js\cache.js
 files\js\debug.js
 files\js\disableupdates.js
 files\js\dumper.js
@@ -49,6 +52,8 @@ files\js\linuxloader2gb.js
 files\js\linuxloader3gb.js
 files\js\linuxloader4gb.js
 files\js\linuxloader5gb.js
+files\js\miraloader.js
+files\js\parentalcontrol.js
 files\js\permanentuart.js
 files\js\restore.js
 files\js\rifrenamer.js
