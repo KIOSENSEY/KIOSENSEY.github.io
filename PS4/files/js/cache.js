@@ -9,5 +9,5 @@ function DisplayCacheProgress(){
 	window.applicationCache.addEventListener("progress",DLProgress,false);
 	window.applicationCache.oncached=function(e){DisplayCacheProgress();};
 	window.applicationCache.onupdateready=function(e){DisplayCacheProgress();};
-	window.applicationCache.onerror=function(e){parent.cacheUPDtxt.innerHTML="Оффлайн Режим";
+	window.applicationCache.onerror=function(e){parent.cacheUPDtxt.innerHTML="Оффлайн Режим.";
 };
