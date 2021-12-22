@@ -6,6 +6,7 @@ files\css\style.css
 files\img\app2usb
 files\img\appdumper
 files\img\backup
+files\img\bg
 files\img\debug
 files\img\disableupdates
 files\img\dumper
@@ -26,6 +27,7 @@ files\img\linuxloader5gb
 files\img\miraloader
 files\img\parentalcontrol
 files\img\permanentuart
+files\img\reactpsplus
 files\img\restore
 files\img\rifrenamer
 files\img\toolbox
@@ -55,8 +57,10 @@ files\js\linuxloader5gb.js
 files\js\miraloader.js
 files\js\parentalcontrol.js
 files\js\permanentuart.js
+files\js\reactpsplus.js
 files\js\restore.js
 files\js\rifrenamer.js
 files\js\rop.js
+files\js\toolbox.js
 files\js\webkit.js
 files\js\webrte.js
