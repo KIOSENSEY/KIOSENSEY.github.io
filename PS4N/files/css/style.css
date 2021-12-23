@@ -1,0 +1,30 @@
+	body{
+	background: linear-gradient(#000, #009);
+    background-size: cover;
+	}
+	img{  
+    width: 120;
+    height: 120;
+	margin: 6px 6px;
+	}
+	button {
+	width: 150;
+    height: 170;
+    background-color: transparent;
+    border: solid 2px #D3D3D3;
+	border-radius: 10px;
+    color: white;
+	margin: 4px 4px;
+	transition: all 0.2s linear;
+	box-shadow: 0 9px #999;
+	}
+	button:hover {
+	border: solid 2px #D3D000;
+    	
+	}
+	button:active {
+	border: solid 2px #FF0000;
+  background-color: #004;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+    }
