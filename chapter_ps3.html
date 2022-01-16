@@ -1,0 +1,77 @@
+<html manifest="offline.manifest">
+  <head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <title>PlayStation®3</title>
+   <body>
+ <style>
+      body {
+    background: linear-gradient(#009, #008);
+	background-size: cover;
+	background-attachment: fixed;
+	}
+	img{  
+    width: 130;
+    height: 160;
+	margin: 0.25em;
+	transition: all 0.3s linear;
+	border: solid 4px transparent;
+	border-radius: 10px
+	}
+    img:hover {
+	border: solid 4px #FDF5E6;
+    transform: scale(1.2,1.2);
+	}
+    img:active {
+	border: solid 4px #DEB887;
+    transition: background 0s;
+    }
+	.container {
+    max-width: 1270px;
+    margin: auto;
+    height: 1000px;
+    }
+	 #mySearch {
+	 width: 100%;
+	 margin: auto;
+     font-size: 15px;
+     padding: 5px;
+     border: 2px solid #ddd;
+	}
+  </style>	
+  
+    <div style="align: center" class="container">
+   <ul id="myMenu">
+   	<br>
+  <a href="files/ps3.html" return false" ><img src="files/img/ps3" alt="button"></a>
+  <a href="files/ps1.html" return false" ><img src="files/img/ps1" alt="button"></a>
+  <a href="files/retro.html" return false" ><img src="files/img/retro" alt="button"></a>
+  <a href="files/soft.html" return false" ><img src="files/img/soft" alt="button"></a>
+  <a href="files/theme.html" return false" ><img src="files/img/theme" alt="button"></a>
+  <a href="hen.html" return false" ><img src="files/img/hen" alt="button"></a>
+  <a href="https://www.dropbox.com/sh/akc7u1nxwfv4v9z/AADYJEuP4kQ4_R2HI0o7ImPpa?dl=1" return false" ><img src="files/img/HFW" alt="button"></a>							       								     
+	<br>
+	<br>
+	</ul>
+	</div>
+<script>
+function myFunction() {
+  // Объявить переменные
+  var input, filter, ul, b, a, i;
+  input = document.getElementById("mySearch");
+  filter = input.value.toUpperCase();
+  ul = document.getElementById("myMenu");
+  b = ul.getElementsByTagName("b");
+
+  // Перебирайте все элементы списка и скрывайте те, которые не соответствуют поисковому запросу
+  for (i = 0; i < b.length; i++) {
+    a = b[i].getElementsByTagName("a")[0];
+    if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+      b[i].style.display = "";
+    } else {
+      b[i].style.display = "none";
+    }
+  }
+}
+</script>
+</body>
+ </html>
