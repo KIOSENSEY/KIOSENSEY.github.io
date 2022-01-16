@@ -2,6 +2,7 @@
   <head>
    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
    <title>PlayStation®3</title>
+   <body>
  <style>
       body {
     background: linear-gradient(#009, #008);
@@ -35,6 +36,9 @@
      font-size: 15px;
      padding: 5px;
      border: 2px solid #ddd;
+	}
+	#myBtn:hover{
+	transform: scale(1.2,1.2);
 	}
   </style>	
   
@@ -529,13 +533,14 @@
 	<b><a href="ps3/Ferrari_The_Race_Experience.html" ><img src="ps3/img/Ferrari_The_Race_Experience.jpg" alt="button"></a></b>
 	<b><a href="ps3/Golden_Axe_Beast_Rider.html" ><img src="ps3/img/Golden_Axe_Beast_Rider.jpg" alt="button"></a></b>
 	<b><a href="ps3/Monster_Jam_Battlegrounds.html" ><img src="ps3/img/Monster_Jam_Battlegrounds.jpg" alt="button"></a></b>
+	<b><a href="ps3/Crash_Time_4_The_Syndicate.html" ><img src="ps3/img/Crash_Time_4_The_Syndicate.jpg" alt="button"></a></b>
 
+	<br>
+	<br>
+	<button style="margin: auto" onclick="topFunction()" id="myBtn" title="Go to top">НАВЕРХ</button>
 	<br>
 	</ul>
 	</div>
-	<br>
-	<br>
-	
 <script>
 function myFunction() {
   // Объявить переменные
@@ -554,6 +559,25 @@ function myFunction() {
       b[i].style.display = "none";
     }
   }
+}
+
+
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("myBtn").style.display = "block";
+    } else {
+        document.getElementById("myBtn").style.display = "none";
+    }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
 </script>
 </body>
