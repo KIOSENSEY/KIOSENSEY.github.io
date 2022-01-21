@@ -2,6 +2,8 @@
   <head>
    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
    <title>PlayStation®1</title>
+   <h1 align="center" style="color:#ffffff">PlayStation®1 Игры для PlayStation®3</h1>
+   <body>
  <style>
       body {
 	background: linear-gradient(#588, #888);
@@ -150,6 +152,12 @@
 	<b><a href="ps1/Alundra_2_A_New_Legend_Begins.html" ><img src="ps1/img/Alundra_2_A_New_Legend_Begins.jpg" alt="button"></a></b>
 	<b><a href="ps1/Command_Conquer_Red_Alert.html" ><img src="ps1/img/Command_Conquer_Red_Alert.jpg" alt="button"></a></b>
 
+
+	<br>
+	<br>
+	<button style="margin: auto" onclick="topFunction()" id="myBtn" title="Go to top">НАВЕРХ</button>
+	<br>
+	<br>
 	</ul>
 	</div>
 <script>
@@ -170,6 +178,24 @@ function myFunction() {
       b[i].style.display = "none";
     }
   }
+}
+
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("myBtn").style.display = "block";
+    } else {
+        document.getElementById("myBtn").style.display = "none";
+    }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
 </script>
 </body>
