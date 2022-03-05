@@ -5,35 +5,11 @@
    <h2 align="center" style="color:#ffffff">PlayStation®3 Игры</h2>
    <body>
  <style>
- 
-
-      body {
-	   padding-bottom: 100%;
-  background-size: 5000% 5000%;
-  background-image: linear-gradient(-90deg,
-    #696969,
-	#8B4513,
-	#800000,
-	#FF0000,
-    #FFFF00,
-    #00FF00,
-	#FF00FF,
-    #0000CD,
-	#800080,
-	#800080
-  );
-  animation: move-background 20s linear infinite; 
-	  
-
-	
+    body {
+    background: linear-gradient(#009, #008);
+	background-size: cover;
+	background-attachment: fixed;
 	}
-	
-	@keyframes move-background {
-  0% { background-position: 0% 0% }
-  50% { background-position: 100% 0% }
-  100% { background-position: 0% 0% }
-}
-
 	img{  
     width: 120;
     height: 150;
@@ -55,23 +31,33 @@
     margin: auto;
     height: 1000px;
     }
-	 #mySearch {
-	 width: 100%;
-	 margin: auto;
-     font-size: 15px;
-     padding: 5px;
-     border: 2px solid #ddd;
+	#mySearch {
+	width: 100%;
+	margin: auto;
+    font-size: 15px;
+    padding: 5px;
+    border: 2px solid #ddd;
 	}
 	#myBtn:hover{
 	transform: scale(1.2,1.2);
 	}
+	img[title]:hover::after {
+	content: attr(title);
+	position: absolute;
+	margin: 4px;
+	color: #000000;
+	background: #FFE4B5;
+	border: 2px solid #ddd;
+	border-radius: 4px;
+	top: +80%;
+	right: 0;
+    }
   </style>
-  
     <div style="align: center" class="container">
-	   <div style="align: center" >
+	   <div style="align: center">
           <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Поиск Игры..." title="Введите название Игры для поиска"></input>
 	   </div>
-    <ul id="myMenu" class="gradient">
+    <ul id="myMenu">
 	<b><a href="ps3/Until_Dawn.html" ><img  src="ps3/img/Until_Dawn.jpg" alt="button" title="Until Dawn™"></a></b>
 	<b><a href="ps3/L.A._Noire.html" ><img src="ps3/img/L.A._Noire.jpg" alt="button" title="L.A. Noire"></a></b>
 	<b><a href="ps3/The_Last_of_Us.html" ><img src="ps3/img/The_Last_of_Us.jpg" alt="button" title="The Last of Us / Одни из нас™ + DLC Оставшиеся позади"></a></b>
@@ -636,12 +622,7 @@
 	<b><a href="ps3/Lord_of_the_Rings_War_in_the_North.html" ><img src="ps3/img/Lord_of_the_Rings_War_in_the_North.jpg" alt="button" title="Lord of the Rings: War in the North"></a></b>
 	<b><a href="ps3/STRANGLEHOLD.html" ><img src="ps3/img/STRANGLEHOLD.jpg" alt="button" title="STRANGLEHOLD™"></a></b>
 	<b><a href="ps3/Sid_Meiers_Civilization_Revolution.html" ><img src="ps3/img/Sid_Meiers_Civilization_Revolution.jpg" alt="button" title="Sid Meier's Civilization Revolution"></a></b>
-	<b><a href="ps3/Damnation.html" ><img src="ps3/img/Damnation.jpg" alt="button" title="Damnation™"></a></b>
-	<b><a href="ps3/The_Fantastic_Four_Rise_of_the_Silver_Surfer.html" ><img src="ps3/img/The_Fantastic_Four_Rise_of_the_Silver_Surfer.jpg" alt="button" title="The Fantastic Four: Rise of the Silver Surfer"></a></b>
-	<b><a href="ps3/Where_the_Wild_Things_Are.html" ><img src="ps3/img/Where_the_Wild_Things_Are.jpg" alt="button" title="Where the Wild Things Are"></a></b>
-	<b><a href="ps3/Blacksite.html" ><img src="ps3/img/Blacksite.jpg" alt="button" title="Blacksite™"></a></b>
-
-
+	<b><a href="ps3/Drakengard_3.html" ><img src="ps3/img/Drakengard_3.jpg" alt="button" title="Drakengard 3"></a></b>
 	<br>
 	<br>
 	<button style="margin: auto" onclick="topFunction()" id="myBtn" title="Go to top">НАВЕРХ</button>
@@ -687,7 +668,6 @@ function topFunction() {
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
-
 </script>
 </body>
  </html>
