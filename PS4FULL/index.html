@@ -6,7 +6,7 @@
 	</head>
 	<body>
 		<div align="center";>
-	  <button onclick="goldhen(); return false" ><img src="files\img\goldhen2.0b2.png">GOLDHEN 2.3.b2</img></button>
+	  <button onclick="goldhen(); return false" ><img src="files\img\goldhen.png">GOLDHEN 2.3.b2</img></button>
 	  <button onclick="webrte(); return false"><img src="files\img\webrte.png">WEBRTE</img></button>
 	  <button onclick="ftp(); return false"><img src="files\img\ftp.png">FTP</img></button>
 	  <button onclick="appdumper(); return false"><img src="files\img\appdumper.png">APP DUMPER</img></button>
@@ -851,7 +851,7 @@ var trigger_spray = function () {
         }
     }
     chain.run();
-    alert("Вставьте USB накопитель. Не закрывайте это окно пока не всплывет уведомление о том что Файловая система этого накопителя USB не поддерживается, только потом нажмите OK и обязательно вытащите накопитель USB.");
+    alert("Вставьте подготовленный накопитель USB. Подождите 10 секунд. После истечения 10-ти секунд нажмите OK и вытащите накопитель USB.");
     {
         for (var i = 1; i < NUM_KQUEUES; i += 2) {
             chain.fcall(window.syscalls[6], kqueues[i]);
