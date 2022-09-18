@@ -1,0 +1,100 @@
+<html manifest="offline.manifest">
+  <head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <title>PlayStation®2</title>
+   <h2 align="center" style="color:#ffffff">Игры PlayStation® Portable для PlayStation®3</h2>
+   <body>
+ <style>
+      body {
+	background: #008 url(img/bg_ps2.jpg) no-repeat;
+    background-size: cover;
+	background-attachment: fixed;
+	}
+	img{  
+    width: 120;
+    height: 180;
+	margin: 0.25em;
+	transition: all 0.3s linear;
+	border: solid 4px transparent;
+	border-radius: 10px
+	}
+    img:hover {
+	border: solid 4px #FDF5E6;
+    transform: scale(1.2,1.2);
+	}
+    img:active {
+	border: solid 4px #DEB887;
+    transition: background 0s;
+    }
+    tr, th {
+    width: 200px;
+    position: absolute; 
+	margin-left: -0px;
+    } 
+	.container {
+    max-width: 1270px;
+    margin: auto;
+    height: 1000px;
+    }
+	 #mySearch {
+	 width: 100%;
+	 margin: auto;
+     font-size: 15px;
+     padding: 5px;
+     border: 2px solid #ddd;
+	}
+  </style>	
+    <div style="align: center" class="container">
+	   <div style="align: center">
+          <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Поиск Игры..." title="Введите название Игры для поиска"></input>
+	   </div>
+    <ul style="margin: 2em;"id="myMenu">
+	<b><a href="psp/Dissidia_Final_Fantasy.html" ><img src="psp/img/Dissidia_Final_Fantasy.jpg" alt="button" title="Dissidia: Final Fantasy"></a></b>
+
+	<br>
+	<br>
+	<button style="margin: auto" onclick="topFunction()" id="myBtn" title="Go to top">НАВЕРХ</button>
+	<br>
+	<br>
+	</ul>
+	</div>
+<script>
+function myFunction() {
+  // Объявить переменные
+  var input, filter, ul, b, a, i;
+  input = document.getElementById("mySearch");
+  filter = input.value.toUpperCase();
+  ul = document.getElementById("myMenu");
+  b = ul.getElementsByTagName("b");
+
+  // Перебирайте все элементы списка и скрывайте те, которые не соответствуют поисковому запросу
+  for (i = 0; i < b.length; i++) {
+    a = b[i].getElementsByTagName("a")[0];
+    if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+      b[i].style.display = "";
+    } else {
+      b[i].style.display = "none";
+    }
+  }
+}
+
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("myBtn").style.display = "block";
+    } else {
+        document.getElementById("myBtn").style.display = "none";
+    }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+</script>
+</body>
+ </html>
