@@ -1,8 +1,8 @@
 	img{  
 	margin-right: 35px;
 	cursor:none;
-    width: 390;
-    height: 460;
+	width: 390;
+	height: 460;
 	border: solid 4px #FDF5E6;
 	border-radius: 10px
    	}
@@ -29,12 +29,22 @@
 	b {
 	margin-left: 35px;
 	}
-	button{
+	button{	
 	background: #F5DEB3;
-	border: 3px solid #000000;
-	margin: 2px;
-		}
-	button:active{
-	background: green;
+	padding: 10px 10px;
+	border: 1px double black;
+	border-radius: 15px;
+	outline: 1px double white;
+	box-shadow: 2px 2px 2px 2px black;
+	margin: 3px;
+	font-weight: bold;
+	transition: all 0.1s linear;
+	}
+	button:hover {
+	}
+	button:active{	
+	background: #BDB76B;
 	color: white;
+	box-shadow: 1px 1px 1px 1px black;
+	transform: translateY(2px);
 	}
