@@ -30,5 +30,11 @@
 	margin-left: 35px;
 	}
 	button{
+	background: #F5DEB3;
 	border: 3px solid #000000;
+	margin: 2px;
+		}
+	button:active{
+	background: green;
+	color: white;
 	}
