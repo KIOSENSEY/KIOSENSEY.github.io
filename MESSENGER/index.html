@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messenger</title>
+	<h1 align="center" style="color:#ff0000">Messenger</h1>
+	</head>
+<body>
+<style>
+	body{
+	background: #FF00FF;
+    background-size: cover;
+	}
+	.mainMessage {
+	text-align:left;
+    margin:0 auto;
+    margin-bottom:25px;
+    padding:10px;
+    background:#fff000;
+    height:350px;
+    width:600px;
+    border:4px solid #ACD8F0;
+	border-radius: 15px;
+    overflow:auto;
+}
+	.content{
+	text-align:left;
+    margin:0 auto;
+    margin-bottom:25px;
+    padding:10px;
+    height:60px;
+    width:610px;
+    overflow:auto;
+	}
+	.user1__form-input{
+	background: #F5DEB3;
+	padding: 10px 10px;
+	border: 1px double black;
+	border-radius: 15px;
+	outline: 1px double white;
+	box-shadow: 2px 2px 2px 2px black;
+	margin: 3px;
+	font-weight: bold;
+	transition: all 0.1s linear;
+	}
+	.user1__name{
+	background: #F5DEB3;
+	padding: 10px 10px;
+	border: 1px double black;
+	border-radius: 15px;
+	outline: 1px double white;
+	box-shadow: 2px 2px 2px 2px black;
+	margin: 3px;
+	font-weight: bold;
+	transition: all 0.1s linear;
+	}
+	.user1__form-submit{
+	background: #F5DEB3;
+	padding: 10px 10px;
+	border: 1px double black;
+	border-radius: 15px;
+	outline: 1px double white;
+	box-shadow: 2px 2px 2px 2px black;
+	margin: 3px;
+	font-weight: bold;
+	transition: all 0.1s linear;
+	}
+	
+</style>
+		<br>
+        <section class="mainMessage">
+           	<section class="mainMessage__User1"></section>
+		</section>
+		<br>
+		<section class="content">
+        <section class="user1 users">
+            <form class="user1__form">
+				<input type="text" class="user1__name" placeholder="Имя..." title="Введите Своё Имя">
+                <input type="text" class="user1__form-input" placeholder="Сообщение...">
+				<input type="submit" class="user1__form-submit" value="Отправить...">
+            </form>
+        </section>
+		</section>	
+
+ <script>
+    function showdate() {
+  var dt = new Date();
+    Hour= dt.getHours();
+  Minute= dt.getMinutes();
+     Day=dt.getDate();
+   Month=dt.getMonth()+1;
+   Year=dt.getFullYear();
+if (Minute < 10) { Minute = "0" + Minute; };
+if (Hour < 10) { Hour = "0" + Hour; };
+document.getElementById("date").innerHTML = (Day+"/"+Month+"/"+Year);
+document.getElementById("clock").innerHTML = (Hour+":"+Minute);
+  }
+    setInterval(showdate,0);
+</script>
+
+ <script>	
+let inputUser1=document.querySelector('.user1__form-input');
+    submitUser1=document.querySelector('.user1__form-submit');
+    formUser1=document.querySelector('.user1');
+    messageToShowUser1=document.querySelector('.mainMessage__User1');
+	User_1=document.querySelector('.user1__name');
+    idMessagesUser1=0;
+let objectForMessages=[//Объект для сообщений
+        [],
+        []
+    ];
+    submitUser1.addEventListener('click',(event)=>{
+        event.preventDefault();
+        let Name=User_1.value;//получает значение
+		let message=inputUser1.value;//получает значение
+        inputUser1.value='';//очищает инпут
+		messageToShowUser1.innerHTML += '<div style="color:#0000CD" class="msg">'+Hour+":"+Minute+" "+Name+": "+'</div><div class="msg">'+ message +'</div>'
+    });
+ </script>
+ 
+</body>
+</html>
