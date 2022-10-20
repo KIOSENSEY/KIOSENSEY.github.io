@@ -1,0 +1,13 @@
+	body{
+	background: #4169E1;
+	}
+	video{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+	border: 4px double black;
+	border-radius: 15px;
+	}
