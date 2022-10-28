@@ -49,3 +49,15 @@
 	box-shadow: 1px 1px 1px 1px black;
 	transform: translateY(2px);
 	}
+	.rus {
+width: 20;
+height: 15;
+background:url(img/flag_rus);
+display:inline-block;
+}	
+.eng {
+width: 20;
+height: 15;
+background:url(img/flag_eng);
+display:inline-block;
+}
