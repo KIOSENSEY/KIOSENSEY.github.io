@@ -358,6 +358,6 @@ var arw_master = new Uint32Array(8);
             return new int64(obj_master[4], obj_master[5]);
         }
     };
-    window.p = prim;
-	run_hax ();
+   window.p = prim;
+   run_hax();
 }
