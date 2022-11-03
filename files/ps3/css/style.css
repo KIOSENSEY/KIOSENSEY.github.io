@@ -31,33 +31,58 @@
 	margin-left: 35px;
 	}
 	button{	
-	background: #F5DEB3;
+	background: #BDB76B;
 	padding: 10px 10px;
 	border: 1px double black;
 	border-radius: 15px;
 	outline: 1px double white;
 	box-shadow: 2px 2px 2px 2px black;
-	margin: 4px;
+	margin: 3px;
 	font-weight: bold;
 	transition: all 0.1s linear;
+	position: relative;
+	overflow: hidden;
 	}
 	button:hover {
+	background: #BDB700;	
 	}
 	button:active{	
-	background: #BDB76B;
+	background: #F5DE00;
 	color: white;
 	box-shadow: 1px 1px 1px 1px black;
 	transform: translateY(2px);
 	}
-	.rus {
-width: 20;
-height: 15;
-background:url(img/flag_rus);
-display:inline-block;
-}	
-.eng {
-width: 20;
-height: 15;
-background:url(img/flag_eng);
-display:inline-block;
-}
+	button:after {
+	content: "";
+	display: block;
+	width: 20px;
+	height: 80px;
+	margin-left: 50px;
+	background: #fff;
+	background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.5) 0%,
+      rgba(255, 255, 255, 1) 50%,
+      rgba(255, 255, 255, 0.5) 100%
+	);
+	left: -40px;
+	top: -25;
+	z-index: 1;
+	transform: rotate(45deg);
+	position: absolute;
+	animation: movingFlare 2s ease-in-out 0.05s infinite;
+	}
+ 	@keyframes movingFlare {
+	0% {
+    left: -30px;
+    margin-left: 0px;
+	}
+	30% {
+    left: 110%;
+    margin-left: 80px;
+	}
+	100% {
+    left: 110%;
+    margin-left: 80px;
+	}
+	}
