@@ -45,11 +45,66 @@
 	color: #000000;
 	background: #FFE4B5;
    }
-
+	button{	
+	background: #BDB76B;
+	padding: 10px 10px;
+	border: 1px double black;
+	border-radius: 15px;
+	outline: 1px double white;
+	box-shadow: 2px 2px 2px 2px black;
+	margin: 3px;
+	font-weight: bold;
+	transition: all 0.1s linear;
+	position: relative;
+	overflow: hidden;
+	}
+	button:hover {
+	background: #BDB700;	
+	}
+	button:active{	
+	background: #F5DE00;
+	color: white;
+	box-shadow: 1px 1px 1px 1px black;
+	transform: translateY(2px);
+	}
+	button:after {
+	content: "";
+	display: block;
+	width: 20px;
+	height: 80px;
+	margin-left: 50px;
+	background: #fff;
+	background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.5) 0%,
+      rgba(255, 255, 255, 1) 50%,
+      rgba(255, 255, 255, 0.5) 100%
+	);
+	left: -40px;
+	top: -25;
+	z-index: 1;
+	transform: rotate(45deg);
+	position: absolute;
+	animation: movingFlare 2s ease-in-out 0.05s infinite;
+	}
+ 	@keyframes movingFlare {
+	0% {
+    left: -30px;
+    margin-left: 0px;
+	}
+	30% {
+    left: 110%;
+    margin-left: 80px;
+	}
+	100% {
+    left: 110%;
+    margin-left: 80px;
+	}
+	}
   </style>
     <div style="align: center" class="container">
 	   <div style="align: center">
-          <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Поиск Игры... Можно по тегам Гонки, Файтинг, Приключение, Шутер, Ролевые, Мувик" title="Введите название Игры для поиска"></input>
+          <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Поиск Игры... Можно по тегам Гонки, Файтинг, Приключение, Шутер, Ролевые, Мувик, Спорт" title="Введите название Игры для поиска"></input>
 	   </div>
     <ul style="margin: 2em;" id="myMenu">
 
@@ -799,6 +854,8 @@
 	<b><a href="ps3/Beowulf_The_Game.html" ><img src="ps3/img/Beowulf_The_Game.jpg" alt="button" title="Beowulf: The Game"></a></b>
 	<b><a href="ps3/Binary_Domain.html" ><img src="ps3/img/Binary_Domain.jpg" alt="button" title="Binary Domain"></a></b>
 	<b><a href="ps3/Masquerade_The_Baubles_of_Doom.html" ><img src="ps3/img/Masquerade_The_Baubles_of_Doom.jpg" alt="button" title="Masquerade: The Baubles of Doom"></a></b>
+	<b><a href="ps3/Obut_Petanque.html" ><img src="ps3/img/Obut_Petanque.jpg" alt="button" title="Obut Petanque" id="Спорт"></a></b>
+	<b><a href="ps3/Dont_Starve_Giant_Edition.html" ><img src="ps3/img/Dont_Starve_Giant_Edition.jpg" alt="button" title="Don't Starve: Giant Edition"></a></b>
 
 	<br>
 	<br>
