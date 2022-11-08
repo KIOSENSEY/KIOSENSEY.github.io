@@ -14,19 +14,19 @@
 	.rus {
 	width: 20;
 	height: 15;
-	background:url(img/flag_rus);
+	background:url(img/flag_rus.gif);
 	display:inline-block;
 	}	
 	.eng {
 	width: 20;
 	height: 15;
-	background:url(img/flag_eng);
+	background:url(img/flag_eng.gif);
 	display:inline-block;
 	}
 	.jap {
 	width: 20;
 	height: 15;
-	background:url(img/flag_jap);
+	background:url(img/flag_jap.gif);
 	display:inline-block;
 	}
   </style>
@@ -58,77 +58,76 @@
      </h4>
 	 <h2 style="color:#FFFFFF">Скачать:</h2>
 	 <b>
-	   <button onclick="window.open('http://catcut.net/go.php?h_i=12735&h_u=aHR0cHM6Ly9kaXNrLnlhbmRleC5ydS9kL2JSb2pSZkljR3JFSWZB')">PKG 1 (3.69gb)</button>
-	   <button onclick="window.open('http://catcut.net/go.php?h_i=12735&h_u=aHR0cHM6Ly9kaXNrLnlhbmRleC5ydS9kL0xqdzZqbjlIRDN3VnBR')">PKG 2 (2.80gb)</button>
-	   <button onclick="window.open('http://q32.ru/65495/http://catcut.net/go.php?h_i=12735&h_u=aHR0cHM6Ly9kaXNrLnlhbmRleC5ydS9kL09HQVBuV01xaUI5RmpR')">PKG 3 (33.1mb)</button>
-	   	</b>
-	   <br><br>
-	   <b>
-	   <button onclick="window.open('http://catcut.net/go.php?h_i=12735&h_u=aHR0cHM6Ly9kaXNrLnlhbmRleC5ydS9kL184ajh2bFNRR2tYQTlR')">DLC Episode 1(165mb)</button>
-	   <button onclick="window.open('http://catcut.net/go.php?h_i=12735&h_u=aHR0cHM6Ly9kaXNrLnlhbmRleC5ydS9kL3IzSllmSmliVXdhdlBB')">DLC Episode 2(255mb)</button>
-	   <button onclick="window.open('http://catcut.net/go.php?h_i=12735&h_u=aHR0cHM6Ly9kaXNrLnlhbmRleC5ydS9kL3lFX3E5WWhmTHVITktB')">DLC Lost Episode 11.5 (1.07gb)</button>
-	   <button onclick="window.open('http://catcut.net/go.php?h_i=12735&h_u=aHR0cHM6Ly9kaXNrLnlhbmRleC5ydS9kL0ZIR01ZeE1lN01GNk9n')">DLC Lost Episode 15.5 (1.22gb)</button>
-	   <button onclick="window.open('http://catcut.net/go.php?h_i=12735&h_u=aHR0cHM6Ly9kaXNrLnlhbmRleC5ydS9kLy1DUGRwb1dTRVpfb3hR')">DLC Episode 19-22 (1.74gb)</button>
-	   <button onclick="window.open('http://catcut.net/go.php?h_i=12735&h_u=aHR0cHM6Ly9kaXNrLnlhbmRleC5ydS9kL2VEZ21aSVUxbDM5QVlR')">DLC (134kb)</button>	   
-      </b>
-	  <hr>
- </body>
-</body>
- </html>
-
-	 <h2 style="color:#FFFFFF">Скачать:</h2>
-	 <b>
-	   <button title="Скачать" onclick="window.open(link01)">PKG 1 (3.69gb)</button>
-	   <button title="Скачать" onclick="window.open(link02)">PKG 2 (2.80gb)</button>
-	   <button title="Скачать" onclick="window.open(link03)">PKG 3 (33.1mb)</button>
+	   <button title="Скачать" onclick="link1()">PKG 1 (3.69gb)</button>
+	   <button title="Скачать" onclick="link2()">PKG 2 (2.80gb)</button>
+	   <button title="Скачать" onclick="link3()">PKG 3 (33.1mb)</button>
 	   </b>
 	   <br><br>
 	   <b>
-	   <button onclick="window.open(link04)">DLC Episode 1(165mb)</button>
-	   <button onclick="window.open(link05)">DLC Episode 2(255mb)</button>
-	   <button onclick="window.open(link06)">DLC Lost Episode 11.5 (1.07gb)</button>
-	   <button onclick="window.open(link07)">DLC Lost Episode 15.5 (1.22gb)</button>
-	   <button onclick="window.open(link08)">DLC Episode 19-22 (1.74gb)</button>
-	   <button onclick="window.open(link09)">DLC (134kb)</button>
+	   <button onclick="link4()">DLC Episode 1(165mb)</button>
+	   <button onclick="link5()">DLC Episode 2(255mb)</button>
+	   <button onclick="link6()">DLC Lost Episode 11.5 (1.07gb)</button>
+	   <button onclick="link7()">DLC Lost Episode 15.5 (1.22gb)</button>
+	   <button onclick="link8()">DLC Episode 19-22 (1.74gb)</button>
+	   <button onclick="link9()">DLC (134kb)</button>
       </b>
 	  <hr>
 	  <br>
-	  	 <script>
-		var str01 = "aHR0cHM6Ly9kaXNrLnlhbmRleC5ydS9kL2JSb2pSZkljR3JFSWZB";
-	var decoded01 = atob(str01);
-	var link01 = "http://q32.ru/65495/" + "http://catcut.net/go.php?h_i=12735&h_u=" + (str01);
-	
-		var str02 = "aHR0cHM6Ly9kaXNrLnlhbmRleC5ydS9kL0xqdzZqbjlIRDN3VnBR";
-	var decoded02 = atob(str02);
-	var link02 = "http://catcut.net/go.php?h_i=12735&h_u=" + (str02);
-	
-		var str03 = "aHR0cHM6Ly9kaXNrLnlhbmRleC5ydS9kL09HQVBuV01xaUI5RmpR";
-	var decoded03 = atob(str03);
-	var link03 = "http://ouo.io/qs/iCKfnfRr?s=" + "http://catcut.net/go.php?h_i=12735&h_u=" + (str03);
-	
-		var str04 = "aHR0cHM6Ly9kaXNrLnlhbmRleC5ydS9kL184ajh2bFNRR2tYQTlR";
-	var decoded04 = atob(str04);
-	var link04 = "http://q32.ru/65495/" + "http://catcut.net/go.php?h_i=12735&h_u=" + (str04);
-	
-		var str05 = "aHR0cHM6Ly9kaXNrLnlhbmRleC5ydS9kL3IzSllmSmliVXdhdlBB";
-	var decoded05 = atob(str05);
-	var link05 = "http://catcut.net/go.php?h_i=12735&h_u=" + (str05);
-	
-		var str06 = "aHR0cHM6Ly9kaXNrLnlhbmRleC5ydS9kL3lFX3E5WWhmTHVITktB";
-	var decoded06 = atob(str06);
-	var link06 = "http://catcut.net/go.php?h_i=12735&h_u=" + (str06);
-
-		var str07 = "aHR0cHM6Ly9kaXNrLnlhbmRleC5ydS9kL0ZIR01ZeE1lN01GNk9n";
-	var decoded07 = atob(str07);
-	var link07 = "http://catcut.net/go.php?h_i=12735&h_u=" + (str07);
-	
-		var str08 = "aHR0cHM6Ly9kaXNrLnlhbmRleC5ydS9kLy1DUGRwb1dTRVpfb3hR";
-	var decoded08 = atob(str08);
-	var link08 = "http://catcut.net/go.php?h_i=12735&h_u=" + (str08);
-	
-		var str09 = "aHR0cHM6Ly9kaXNrLnlhbmRleC5ydS9kL2VEZ21aSVUxbDM5QVlR";
-	var decoded09 = atob(str09);
-	var link09 = "http://catcut.net/go.php?h_i=12735&h_u=" + (str09);	
-		</script>
+	  <script>
+		function link1(){
+	  let script = document.createElement('script'); script.src = "js/ASURAS_WRATH.js"; document.head.append(script);
+	  setTimeout(function(){
+	  window.open(link01)
+	   }, 100);
+	  }
+		function link2(){
+	  let script = document.createElement('script'); script.src = "js/ASURAS_WRATH.js"; document.head.append(script);
+	  setTimeout(function(){
+	  window.open(link02)
+	  	   }, 100);
+	  }
+		function link3(){
+	  let script = document.createElement('script'); script.src = "js/ASURAS_WRATH.js"; document.head.append(script);
+	  setTimeout(function(){
+	  window.open(link03)
+	  	   }, 100);
+	  }
+	  	function link4(){
+	  let script = document.createElement('script'); script.src = "js/ASURAS_WRATH.js"; document.head.append(script);
+	  setTimeout(function(){
+	  window.open(link04)
+	   }, 100);
+	  }
+		function link5(){
+	  let script = document.createElement('script'); script.src = "js/ASURAS_WRATH.js"; document.head.append(script);
+	  setTimeout(function(){
+	  window.open(link05)
+	  	   }, 100);
+	  }
+		function link6(){
+	  let script = document.createElement('script'); script.src = "js/ASURAS_WRATH.js"; document.head.append(script);
+	  setTimeout(function(){
+	  window.open(link06)
+	  	   }, 100);
+	  }
+	  	  	function link7(){
+	  let script = document.createElement('script'); script.src = "js/ASURAS_WRATH.js"; document.head.append(script);
+	  setTimeout(function(){
+	  window.open(link07)
+	   }, 100);
+	  }
+		function link8(){
+	  let script = document.createElement('script'); script.src = "js/ASURAS_WRATH.js"; document.head.append(script);
+	  setTimeout(function(){
+	  window.open(link08)
+	  	   }, 100);
+	  }
+		function link9(){
+	  let script = document.createElement('script'); script.src = "js/ASURAS_WRATH.js"; document.head.append(script);
+	  setTimeout(function(){
+	  window.open(link09)
+	  	   }, 100);
+	  }
+	  </script>
 	</body>
  </html>

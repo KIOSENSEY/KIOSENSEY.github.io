@@ -14,19 +14,19 @@
 	.rus {
 	width: 20;
 	height: 15;
-	background:url(img/flag_rus);
+	background:url(img/flag_rus.gif);
 	display:inline-block;
 	}	
 	.eng {
 	width: 20;
 	height: 15;
-	background:url(img/flag_eng);
+	background:url(img/flag_eng.gif);
 	display:inline-block;
 	}
 	.jap {
 	width: 20;
 	height: 15;
-	background:url(img/flag_jap);
+	background:url(img/flag_jap.gif);
 	display:inline-block;
 	}
   </style>
@@ -58,17 +58,19 @@
 Игрок берет на себя роль фотожурналиста (без редактора персонажей, только выбор персонажей мужского и женского пола), основным источником дохода которого является съемка различных животных и отправка фотографий клиентам. Вы будете получать множество заказов по электронной почте на свой ноутбук, что потребует от вас сфотографировать определенных животных. Вы можете подкрасться, чтобы сфотографировать данную ситуацию как можно лучше, так как ваше присутствие может напугать или раздражать некоторых животных. Чтобы ускорить поездку, у вас будет джип с родным гидом, позволяющим использовать камеру во время движения.
 Будучи симулятором и приключением в одном, помимо преследуемой цели, обстановка и подлинный африканский континент дадут вам больше, чем просто конфетку. Вспомните все те документальные фильмы, которые вы любили смотреть в детстве...теперь вы можете посмотреть свои собственные.
      </h4>
-
 	 <h2 style="color:#FFFFFF">Скачать:</h2>
 	 <b>
-	   <button title="Скачать" onclick="window.open(link01)">ISO [IRD](18.1gb)</button>
+	   <button title="Скачать" onclick="link1()">ISO [IRD](18.1gb)</button>
       </b>
 	  <hr>
 	  <br>
-	  	 <script>
-		var str01 = "aHR0cHM6Ly8xZHJ2LmRlL3UvcyFBdXBnLTFPRFBGT3RnMUxjUGVGM2ZWM1RXN25DP2U9Y1VMUU5E";
-	var decoded01 = atob(str01);
-	var link01 = "http://q32.ru/65495/" + "http://catcut.net/go.php?h_i=12735&h_u=" + (str01);
-		</script>
+	  <script>
+		function link1(){
+	  let script = document.createElement('script'); script.src = "js/Afrika.js"; document.head.append(script);
+	  setTimeout(function(){
+	  window.open(link01)
+	   }, 100);
+	  }
+	  </script>
 	</body>
  </html>

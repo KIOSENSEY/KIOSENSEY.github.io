@@ -14,19 +14,19 @@
 	.rus {
 	width: 20;
 	height: 15;
-	background:url(img/flag_rus);
+	background:url(img/flag_rus.gif);
 	display:inline-block;
 	}	
 	.eng {
 	width: 20;
 	height: 15;
-	background:url(img/flag_eng);
+	background:url(img/flag_eng.gif);
 	display:inline-block;
 	}
 	.jap {
 	width: 20;
 	height: 15;
-	background:url(img/flag_jap);
+	background:url(img/flag_jap.gif);
 	display:inline-block;
 	}
   </style>
@@ -59,22 +59,33 @@ Binary Domain ставит игрока на роль Дэна Маршалла,
      </h4>
 	 <h2 style="color:#FFFFFF">Скачать:</h2>
 	 <b>
-	   <button onclick="window.open(link01)">PKG (3.29gb)</button>
-	   <button onclick="window.open(link02)">PKG (2.69gb)</button>
-	   <button onclick="window.open(link03)">PKG (99.5mb)</button>
+	   <button onclick="link1()">PKG (3.29gb)</button>
+	   <button onclick="link2()">PKG (2.69gb)</button>
+	   <button onclick="link3()">PKG (99.5mb)</button>
       </b>
 	  <hr>
 	  <br>
-	  	 <script>
-		var str01 = "aHR0cHM6Ly9pY2Vkcml2ZS5uZXQvcy8xWFA4azY1NU5mWTF2RlhodWE4RjUzNlFYdVNm";
-	var decoded01 = atob(str01);
-	var link01 = "http://q32.ru/65495/" + "http://catcut.net/go.php?h_i=12735&h_u=" + (str01);
-		var str02 = "aHR0cHM6Ly9pY2Vkcml2ZS5uZXQvcy9EMmFEWVN4Q1cyelk0eFR3MmFHanh3elQ2VzRX";
-	var decoded02 = atob(str02);
-	var link02 = "http://ouo.io/qs/iCKfnfRr?s=" + "http://catcut.net/go.php?h_i=12735&h_u=" + (str02);
-		var str03 = "aHR0cHM6Ly9pY2Vkcml2ZS5uZXQvcy8zMXh5aE5QNHU0MzdHdjN5VEd4dXozaHZGNFpq";
-	var decoded03 = atob(str03);
-	var link03 = "http://ouo.io/qs/iCKfnfRr?s=" + "http://catcut.net/go.php?h_i=12735&h_u=" + (str03);	
-		</script>
  </body>
+ </html>
+	  <script>
+		function link1(){
+	  let script = document.createElement('script'); script.src = "js/Binary_Domain.js"; document.head.append(script);
+	  setTimeout(function(){
+	  window.open(link01)
+	   }, 100);
+	  }
+		function link2(){
+	  let script = document.createElement('script'); script.src = "js/Binary_Domain.js"; document.head.append(script);
+	  setTimeout(function(){
+	  window.open(link02)
+	  	   }, 100);
+	  }
+		function link3(){
+	  let script = document.createElement('script'); script.src = "js/Binary_Domain.js"; document.head.append(script);
+	  setTimeout(function(){
+	  window.open(link03)
+	  	   }, 100);
+	  }
+	  </script>
+	</body>
  </html>

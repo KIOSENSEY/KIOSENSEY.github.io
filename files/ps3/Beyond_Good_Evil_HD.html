@@ -14,19 +14,19 @@
 	.rus {
 	width: 20;
 	height: 15;
-	background:url(img/flag_rus);
+	background:url(img/flag_rus.gif);
 	display:inline-block;
 	}	
 	.eng {
 	width: 20;
 	height: 15;
-	background:url(img/flag_eng);
+	background:url(img/flag_eng.gif);
 	display:inline-block;
 	}
 	.jap {
 	width: 20;
 	height: 15;
-	background:url(img/flag_jap);
+	background:url(img/flag_jap.gif);
 	display:inline-block;
 	}
   </style>
@@ -58,23 +58,17 @@
      </h4>
 	 <h2 style="color:#FFFFFF">Скачать:</h2>
 	 <b>
-	   <button onclick="window.open('http://q32.ru/65495/http://catcut.net/vaYQ')">PKG</button>
-      </b>
-	  <hr>
- </body>
-</body>
- </html>
-
-	 <h2 style="color:#FFFFFF">Скачать:</h2>
-	 <b>
-	   <button title="Скачать" onclick="window.open(link01)">PKG (1.46gb)</button>
+	   <button title="Скачать" onclick="link1()">PKG (1.46gb)</button>
       </b>
 	  <hr>
 	  <br>
-	  	 <script>
-		var str01 = "aHR0cHM6Ly9kaXNrLnlhbmRleC5ydS9kLzBDQ1lRY1FxZEJlV2F3";
-	var decoded01 = atob(str01);
-	var link01 = "http://q32.ru/65495/" + "http://catcut.net/go.php?h_i=12735&h_u=" + (str01);
-		</script>
+	  <script>
+		function link1(){
+	  let script = document.createElement('script'); script.src = "js/Beyond_Good_Evil_HD.js"; document.head.append(script);
+	  setTimeout(function(){
+	  window.open(link01)
+	   }, 100);
+	  }
+	  </script>
 	</body>
  </html>

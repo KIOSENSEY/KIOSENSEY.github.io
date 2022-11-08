@@ -57,21 +57,26 @@
 Однажды счастливый уборщик крупнейшего мясокомбината Oddworld, Эйб, узнал о коварном плане своего босса понаделать из местных рабов мясных закусок RuptureFarms Tasty Treats.
 Теперь Эйбу придётся спасать свою шкуру от мясорубки – даже если побег с мясокомбината окажется началом его Одиссеи. Кровожадные охотники, плотоядные священные животные, ловушки древних храмов и даже возвращение на бывшее место работы - все это ожидает Эйба на пути к наследию своего народа.
      </h4>
- 	 <h2 style="color:#FFFFFF">Скачать:</h2>
-	 <b>
-	   <button title="Скачать" onclick="window.open(link01)">PKG 1 (3.92gb)</button>
-	   <button title="Скачать" onclick="window.open(link02)">PKG 2 (591mb)</button>
+	 <h2 style="color:#FFFFFF">Скачать:</h2>
+	<b>
+	   <button title="Скачать" onclick="link1()">PKG 1 (3.92gb)</button>
+	   <button title="Скачать" onclick="link2()">PKG 2 (591gb)</button>
       </b>
 	  <hr>
 	  <br>
-	  	 <script>
-		var str01 = "aHR0cHM6Ly9kaXNrLnlhbmRleC5ydS9kLzRnTFFZblBtWExwZ25B";
-	var decoded01 = atob(str01);
-	var link01 = "http://q32.ru/65495/" + "http://catcut.net/go.php?h_i=12735&h_u=" + (str01);
-	
-		var str02 = "aHR0cHM6Ly9kaXNrLnlhbmRleC5ydS9kL0l2TDZHSWhaempIYXNR";
-	var decoded02 = atob(str02);
-	var link02 = "http://ouo.io/qs/iCKfnfRr?s=" + "http://catcut.net/go.php?h_i=12735&h_u=" + (str02);
-		</script>
+	  <script>
+		function link1(){
+	  let script = document.createElement('script'); script.src = "js/Abes_Oddysee_New_n_Tasty.js"; document.head.append(script);
+	  setTimeout(function(){
+	  window.open(link01)
+	   }, 100);
+	  }
+		function link2(){
+	  let script = document.createElement('script'); script.src = "js/Abes_Oddysee_New_n_Tasty.js"; document.head.append(script);
+	  setTimeout(function(){
+	  window.open(link02)
+	  	   }, 100);
+	  }
+	  </script>
 	</body>
  </html>
