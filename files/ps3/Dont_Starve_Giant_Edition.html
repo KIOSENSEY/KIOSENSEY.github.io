@@ -35,7 +35,7 @@
      <h3 style="color:#FFFFFF" >
 	 Год выпуска: 2015
 	 <br>
-	 Жанр: Indie / Sandbox /Horror
+	 Жанр: Indie / Sandbox / Horror
 	 <br>
 	 Разработчик: Klei Entertainment
 	 <br>
@@ -58,15 +58,18 @@
 Вы - Уилсон, отважный учёный господин, которого поймал злобный демон и отправил в загадочные дикие земли. Уилсон должен обуздать этот мир и его обитателей, чтобы сбежать отсюда и вернуться в свой родной дом. Откройте таинственный неизведанный мир, где на каждом шагу Вас ожидают странные существа, опасности и неожиданности. Собирайте ресурсы, чтобы создавать предметы и вещи, которые помогут Вам выжить. Играйте так, как этого хочется Вам, и разгадайте тайны этих загадочных земель.
      </h4>
 	 <h2 style="color:#FFFFFF">Скачать:</h2>
-	 <b>
-	   <button title="Скачать" onclick="window.open(link01)">PKG 1 (426mb)</button>
+	<b>
+	   <button title="Скачать" onclick="link1()">PKG (426mb)</button>
       </b>
 	  <hr>
 	  <br>
-	  	 <script>
-		var str01 = "aHR0cHM6Ly9kaXNrLnlhbmRleC5ydS9kL04zZEFnV1VFODZFN2ln";
-	var decoded01 = atob(str01);
-	var link01 = "http://q32.ru/65495/" + "http://catcut.net/go.php?h_i=12735&h_u=" + (str01);
-		</script>
+	  <script>
+		function link1(){
+	  let script = document.createElement('script'); script.src = "js/Dont_Starve_Giant_Edition.js"; document.head.append(script);
+	  setTimeout(function(){
+	  window.open(link01)
+	   }, 200);
+	  }
+	  </script>
 	</body>
  </html>
