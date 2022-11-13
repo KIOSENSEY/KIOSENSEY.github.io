@@ -54,17 +54,21 @@
 	 Описание:
 	 </h3></div>
 	 <h4 style="color:#FFFFFF">
-Five Nights at Freddys (5 ночей с фредди) – довольно свежая и страшная игра от создателя Scottgames. Fnaf уже успела напугать множество пользователей ПК. И теперь эта игра появилась на андроид! В игре вы выступаете в роле ночного охранника в обычной пиццерии Freddy Fazbear's Pizza. Игрушечные животные в пиццерии днем развлекают и радуют детей, а ночью пытаются выбраться и убить вас! Вы находитесь в своём офисе, где наблюдаете за всем, что происходит в здании с камер наблюдения. Вам стоит всего лишь продержаться пять ночей, что бы получить зарплату и выжить...    </h4>
-	 <h2 style="color:#FFFFFF">Скачать:</h2>
-	 <b>
-	   <button title="Скачать" onclick="window.open(link01)">PKG (15.7mb)</button>
+Five Nights at Freddys (5 ночей с фредди) – довольно свежая и страшная игра от создателя Scottgames. Fnaf уже успела напугать множество пользователей ПК. И теперь эта игра появилась на андроид Вы находитесь в своём офисе, где наблюдаете за всем, что происходит в здании с камер наблюдения. Вам стоит всего лишь продержаться пять ночей, что бы получить зарплату и выжить...
+    </h4>
+	<h2 style="color:#FFFFFF">Скачать:</h2>
+	<b>
+	   <button title="Скачать" onclick="link1()">PKG (15.7mb)</button>
       </b>
 	  <hr>
 	  <br>
-	  	 <script>
-		var str01 = "aHR0cHM6Ly9kaXNrLnlhbmRleC5ydS9kL0tPNVd3a2dsTElDNHBR";
-	var decoded01 = atob(str01);
-	var link01 = "http://q32.ru/65495/" + "http://catcut.net/go.php?h_i=12735&h_u=" + (str01);
-		</script>
+	  <script>
+		function link1(){
+	  let script = document.createElement('script'); script.src = "js/Five_Nights_at_Freddys.js"; document.head.append(script);
+	  setTimeout(function(){
+	  window.open(link01)
+	   }, 200);
+	  }
+	  </script>
 	</body>
  </html>
