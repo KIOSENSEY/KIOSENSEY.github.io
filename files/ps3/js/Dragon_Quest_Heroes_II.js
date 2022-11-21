@@ -1,4 +1,4 @@
-		var str01 = "aHR0cHM6Ly9pY2Vkcml2ZS5uZXQvcy8xNDR4aHZZUWlTdVIyREFrZ2EzU2ZQWEZHWGha";
+		var str01 = "aHR0cHM6Ly9pY2Vkcml2ZS5uZXQvcy9BYXl4MWFpeVY1NGF2dWtRV1NrMlYyeDl5MkNa";
 	var decoded01 = atob(str01);
 	var link01 = "http://ouo.io/qs/iCKfnfRr?s=" + "http://catcut.net/go.php?h_i=12735&h_u=" + (str01);
 	
@@ -10,7 +10,7 @@
 	var decoded03 = atob(str03);
 	var link03 = "http://catcut.net/go.php?h_i=12735&h_u=" + (str03);
 	
-		var str04 = "aHR0cHM6Ly9pY2Vkcml2ZS5uZXQvcy9aaGJBR3dBeEZqUUJBaDdGNlZ2QVBSRzQ4R1dm";
+		var str04 = "aHR0cHM6Ly9pY2Vkcml2ZS5uZXQvcy9GUFJnZllYamg0R2hCNTMzQkN4Qzk0YloxVllS";
 	var decoded04 = atob(str04);
 	var link04 = "http://ouo.io/qs/iCKfnfRr?s=" + "http://catcut.net/go.php?h_i=12735&h_u=" + (str04);
 	
