@@ -1,4 +1,4 @@
-		var str01 = "aHR0cHM6Ly9pY2Vkcml2ZS5uZXQvcy9BYXl4MWFpeVY1NGF2dWtRV1NrMlYyeDl5MkNa";
+		var str01 = "aHR0cHM6Ly9pY2Vkcml2ZS5uZXQvcy91R3ozNDJTQXpRWGZaeU50NGd1Q1RoZlZDQXg3";
 	var decoded01 = atob(str01);
 	var link01 = "http://ouo.io/qs/iCKfnfRr?s=" + "http://catcut.net/go.php?h_i=12735&h_u=" + (str01);
 	
