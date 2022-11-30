@@ -10,6 +10,6 @@
 	var decoded03 = atob(str03);
 	var link03 = "http://catcut.net/go.php?h_i=12735&h_u=" + (str03);
 	
-		var str04 = "https://drive.google.com/file/d/1xocutIGjzWEtqgXtjeQq2ZfAnTtNsemr/view?usp=share_link";
+		var str04 = "aHR0cHM6Ly9kcml2ZS5nb29nbGUuY29tL2ZpbGUvZC8xeG9jdXRJR2p6V0V0cWdYdGplUXEyWmZBblR0TnNlbXIvdmlldw==";
 	var decoded04 = atob(str04);
 	var link04 = "http://ouo.io/qs/iCKfnfRr?s=" + "http://catcut.net/go.php?h_i=12735&h_u=" + (str04);
