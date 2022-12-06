@@ -31,8 +31,9 @@
   <a href="chapter_ps4.html" return false" ><img src="files/img/ps4" alt="button"></a>		
   <a href="https://talkrooms.ru/#755veNia" return false" ><img src="files/img/Messenger" alt="button"></a>	
 </div>
+<br><br><br>
 <div align="center">
-<canvas  id="canvas" width="150" height="150">The current time</canvas>
+<canvas  id="canvas"  width="150" height="150">The current time</canvas>
 </div>
 	  <script>
 // количество снежинок, которое будет на экране одновременно.
@@ -135,14 +136,14 @@ function clock() {
   ctx.save();
   ctx.clearRect(0, 0, 150, 150);
   ctx.translate(75, 75);
-  ctx.scale(0.4, 0.4);
+  ctx.scale(0.5, 0.5);
   ctx.rotate(-Math.PI / 2);
   ctx.strokeStyle = 'black';
   ctx.fillStyle = 'white';
   ctx.lineWidth = 8;
   ctx.lineCap = 'round';
 
-  // Hour marks
+  // Часовые Стрелки
   ctx.save();
   for (let i = 0; i < 12; i++) {
     ctx.beginPath();
@@ -153,7 +154,7 @@ function clock() {
   }
   ctx.restore();
 
-  // Minute marks
+  // MМинутные Стрелки
   ctx.save();
   ctx.lineWidth = 5;
   for (let i = 0; i < 60; i++) {
