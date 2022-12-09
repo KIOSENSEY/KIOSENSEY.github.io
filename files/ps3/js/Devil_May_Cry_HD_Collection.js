@@ -10,3 +10,7 @@
 		var str03 = "aHR0cHM6Ly9kaXNrLnlhbmRleC5ydS9kL2pHLXA4N3hSeTdnc0ZR";
 	var decoded03 = atob(str03);
 	var link03 = "http://catcut.net/go.php?h_i=12735&h_u=" + (str03);
+	
+		var str04 = "aHR0cHM6Ly9kaXNrLnlhbmRleC5ydS9kL1hYN1lOMUJHVTN1enFR";
+	var decoded04 = atob(str04);
+	var link04 = "http://catcut.net/go.php?h_i=12735&h_u=" + (str04);	
