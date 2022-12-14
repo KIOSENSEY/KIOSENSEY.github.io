@@ -1,12 +1,17 @@
 <html manifest="offline.manifest">
   <head>
    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-   <title>PlayStation® Portable</title>
+   <title>PlayStation® Portable PlayStation®3</title>
    <h2 align="center" style="color:#ffffff">Игры PlayStation® Portable для PlayStation®3</h2>
    <body>
  <style>
+  h2{
+    text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #ff65bd,
+      -0.2rem 0.1rem 1rem #ff65bd, 0.2rem 0.1rem 1rem #ff65bd,
+      0 -0.5rem 2rem #ff2483, 0 0.5rem 3rem #ff2483;
+ }
       body {
-	background: #008 url(img/bg_ps2.jpg) no-repeat;
+	background: url(img/bg_psp.jpg) no-repeat, linear-gradient(#123, #321);
     background-size: cover;
 	background-attachment: fixed;
 	}
@@ -42,6 +47,62 @@
      font-size: 15px;
      padding: 5px;
      border: 2px solid #ddd;
+	}
+		button{	
+	background: #BDB76B;
+	padding: 10px 10px;
+	border: 1px double black;
+	border-radius: 15px;
+	outline: 1px double white;
+	box-shadow: 2px 2px 2px 2px black;
+	margin: 3px;
+	font-weight: bold;
+	transition: all 0.1s linear;
+	position: relative;
+	overflow: hidden;
+	}
+	button:hover {
+	background: #BDB700;	
+	}
+	button:active{	
+	background: #F5DE00;
+	color: white;
+	box-shadow: 1px 1px 1px 1px black;
+	transform: translateY(2px);
+	}
+	button:after {
+	content: "";
+	display: block;
+	width: 20px;
+	height: 80px;
+	margin-left: 50px;
+	background: #fff;
+	background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.5) 0%,
+      rgba(255, 255, 255, 1) 50%,
+      rgba(255, 255, 255, 0.5) 100%
+	);
+	left: -40px;
+	top: -25;
+	z-index: 1;
+	transform: rotate(45deg);
+	position: absolute;
+	animation: movingFlare 2s ease-in-out 0.05s infinite;
+	}
+ 	@keyframes movingFlare {
+	0% {
+    left: -30px;
+    margin-left: 0px;
+	}
+	30% {
+    left: 110%;
+    margin-left: 80px;
+	}
+	100% {
+    left: 110%;
+    margin-left: 80px;
+	}
 	}
   </style>	
     <div style="align: center" class="container">
