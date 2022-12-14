@@ -1,0 +1,72 @@
+<html manifest="offline.manifest">
+  <head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <title>PlayStation® Portable</title>
+   <body>
+ <style>
+      body {
+    background: #888888 url(files/img/psp_bg.jpg) no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	}
+	img{  
+    width: 170;
+    height: 200;
+	margin: 0.25em;
+	transition: all 0.3s linear;
+	border: solid 4px transparent;
+	border-radius: 10px
+	}
+    img:hover {
+	border: solid 4px #FDF5E6;
+    transform: scale(1.2,1.2);
+	}
+    img:active {
+	border: solid 4px #DEB887;
+    transition: background 0s;
+    }
+	.container {
+    max-width: 1270px;
+    margin: auto;
+    height: 1000px;
+    }
+	 #mySearch {
+	 width: 100%;
+	 margin: auto;
+     font-size: 15px;
+     padding: 5px;
+     border: 2px solid #ddd;
+	}
+  </style>	
+  
+    <div style="align: center" class="container">
+   <ul id="myMenu">
+   	<br>
+  <a href="files/psp.html" return false" ><img src="files/img/psp" alt="button"></a>
+
+	<br>
+	<br>
+	</ul>
+	</div>
+<script>
+function myFunction() {
+  // Объявить переменные
+  var input, filter, ul, b, a, i;
+  input = document.getElementById("mySearch");
+  filter = input.value.toUpperCase();
+  ul = document.getElementById("myMenu");
+  b = ul.getElementsByTagName("b");
+
+  // Перебирайте все элементы списка и скрывайте те, которые не соответствуют поисковому запросу
+  for (i = 0; i < b.length; i++) {
+    a = b[i].getElementsByTagName("a")[0];
+    if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+      b[i].style.display = "";
+    } else {
+      b[i].style.display = "none";
+    }
+  }
+}
+</script>
+</body>
+ </html>
