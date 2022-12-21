@@ -41,10 +41,18 @@ Koudelka - ролевая игра с элементами survival horror. Иг
 В игре реализовано усовершенствованное управление оружием, при котором урон, наносимый определенным типом оружия (голыми руками, пистолетами, булавами и т. д.), увеличивается по мере использования оружия. В конце концов оружие сломается, но у побежденных врагов можно будет найти новое. Когда уровень одного из персонажей повышается, игроки могут свободно распределять очки опыта, чтобы увеличивать и настраивать любую свою статистику и параметры.
      </h4>
 	 <h2 style="color:#FFFFFF">Скачать:</h2>
-	 <b>
-	   <button onclick="window.open('http://ccl.su/h4SZ')">PKG (2.35gb)</button>
+	<b>
+	   <button title="Скачать" onclick="link1()">PKG (2.35gb)</button>
       </b>
 	  <hr>
- </body>
-</body>
+	  <br>
+	  <script>
+		function link1(){
+	  let script = document.createElement('script'); script.src = "js/Koudelka.js"; document.head.append(script);
+	  setTimeout(function(){
+	  window.open(link01)
+	   }, 400);
+	  }
+	  </script>
+	</body>
  </html>
