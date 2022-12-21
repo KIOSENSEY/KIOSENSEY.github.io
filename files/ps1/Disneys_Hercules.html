@@ -11,7 +11,6 @@
     background-size: cover;
 	background-attachment: fixed;
 	}
-
   </style>
   <div>
 	<p><img src="img/Disneys_Hercules.jpg" align="right">
@@ -37,12 +36,21 @@
 	 Описание:
 	 </h3></div>
 	 <h4 style="color:#FFFFFF">
-Побывай в облике Геракла, самого крутого героя в мире древнегреческих сказаний. Попробуй повторить его легендарные подвиги: возможно, у тебя это получится гораздо удачнее! Главное правило в этом нелёгком деле - беги быстрее, бей сильнее, бери больше!     </h4>
+Побывай в облике Геракла, самого крутого героя в мире древнегреческих сказаний. Попробуй повторить его легендарные подвиги: возможно, у тебя это получится гораздо удачнее     </h4>
+	</h4>
 	 <h2 style="color:#FFFFFF">Скачать:</h2>
-	 <b>
-	   <button onclick="window.open('http://catcut.net/ES3Q')">PKG</button>
+	<b>
+	   <button title="Скачать" onclick="link1()">PKG (397mb)</button>
       </b>
 	  <hr>
- </body>
-</body>
+	  <br>
+	  <script>
+		function link1(){
+	  let script = document.createElement('script'); script.src = "js/Disneys_Hercules.js"; document.head.append(script);
+	  setTimeout(function(){
+	  window.open(link01)
+	   }, 400);
+	  }
+	  </script>
+	</body>
  </html>
