@@ -40,13 +40,27 @@ Gran Turismo 2 получила признание благодаря детал
      </h4>
 	 <h2 style="color:#FFFFFF">Скачать: Disc 1 Arcade</h2>
 	   <b>
-	   <button onclick="window.open('http://catcut.net/mF5Q')">PKG</button>	   
-      </b>
+	   <button title="Скачать" onclick="link1()">PKG (701mb)</button>
+	         </b><br><b>
 	  	 <h2 style="color:#FFFFFF">Скачать: Disc 2 Simulation</h2>
 	   <b>
-	   <button onclick="window.open('http://catcut.net/nF5Q')">PKG</button>
+	   <button title="Скачать" onclick="link2()">PKG (647mb)</button>
       </b>
 	  <hr>
- </body>
-</body>
+	  <br>
+	  <script>
+		function link1(){
+	  let script = document.createElement('script'); script.src = "js/Gran_Turismo_2.js"; document.head.append(script);
+	  setTimeout(function(){
+	  window.open(link01)
+	   }, 400);
+	  }
+		function link2(){
+	  let script = document.createElement('script'); script.src = "js/Gran_Turismo_2.js"; document.head.append(script);
+	  setTimeout(function(){
+	  window.open(link02)
+	   }, 400);
+	  }	  
+	  </script>
+	</body>
  </html>
