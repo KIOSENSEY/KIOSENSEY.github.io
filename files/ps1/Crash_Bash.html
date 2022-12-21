@@ -11,7 +11,6 @@
     background-size: cover;
 	background-attachment: fixed;
 	}
-
   </style>
   <div>
 	<p><img src="img/Crash_Bash.jpg" align="right">
@@ -40,10 +39,18 @@
 В этой игре из серии Crash Bandicoot Крэш и его соратники участвуют в играх в стиле Mario Party от Nintendo. Всего существует 7 типов мини-игр, 4 из которых доступны с самого начала игры. Каждый из типов мини-игр имеет 4 варианта, всего 28 различных мини-игр. Типы мини-игр варьируются от машин-бамперов до игры вчетвером. Цель каждой игры - либо набрать больше очков, чем противники, либо уничтожить их. В каждой мини-игре могут участвовать до 4 игроков, при этом ИИ занимает все неиспользуемые слоты.
      </h4>
 	 <h2 style="color:#FFFFFF">Скачать:</h2>
-	 <b>
-	   <button onclick="window.open('http://catcut.net/RwuQ')">PKG</button>
+	<b>
+	   <button title="Скачать" onclick="link1()">PKG (178mb)</button>
       </b>
 	  <hr>
- </body>
-</body>
+	  <br>
+	  <script>
+		function link1(){
+	  let script = document.createElement('script'); script.src = "js/Crash_Bash.js"; document.head.append(script);
+	  setTimeout(function(){
+	  window.open(link01)
+	   }, 400);
+	  }
+	  </script>
+	</body>
  </html>
