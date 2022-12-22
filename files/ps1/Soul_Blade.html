@@ -11,7 +11,6 @@
     background-size: cover;
 	background-attachment: fixed;
 	}
-
   </style>
   <div>
 	<p><img src="img/Soul_Blade.jpg" align="right">
@@ -40,10 +39,18 @@
 Эта арена для сражен я подарит ярчайшие впечатления всем прирожденным бойцам. К тому же у игроков в проекте «Soul Blade» появилась возможность начать свою игру за одного из десяти представленных воинов. Вы попадаете в мир сражений и несправедливости. Тут никто не посмотрит на то что вы чего-то не умеете или же не можете. Свой боевой путь любой игрок выберет после того как испытает на себе больше количество разнообразного вооружения. Вы сможете начать свой путь бойца полностью подготовленным, если пройдете обучающий режим. Впрочем, все в ваших руках.
      </h4>
 	 <h2 style="color:#FFFFFF">Скачать:</h2>
-	 <b>
-	   <button onclick="window.open('http://ccl.su/I4tR')">PKG</button>
+	<b>
+	   <button title="Скачать" onclick="link1()">PKG (484mb)</button>
       </b>
 	  <hr>
- </body>
-</body>
+	  <br>
+	  <script>
+		function link1(){
+	  let script = document.createElement('script'); script.src = "js/Soul_Blade.js"; document.head.append(script);
+	  setTimeout(function(){
+	  window.open(link01)
+	   }, 400);
+	  }
+	  </script>
+	</body>
  </html>
