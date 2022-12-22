@@ -11,7 +11,6 @@
     background-size: cover;
 	background-attachment: fixed;
 	}
-
   </style>
   <div>
 	<p><img src="img/Resident_Evil_Survivor.jpg" align="right">
@@ -38,13 +37,20 @@
 	 </h3></div>
 	 <h4 style="color:#FFFFFF">
 Действие происходит в загадочном городе Енота. Вы попадаете в заброшенный особняк на окраине города. Здесь вы сталкиваетесь со злобными зомби. Они повсюду, они слышат ваш голос, ваши шаги, предугадывают ваши действия... Как выбраться из этого ужаса?... В игре множество новшеств, которые коснулись прежде всего графики. Теперь все более реалистично, большое количество объектов, на которые Вы можете воздействовать. Потрясающий звук, имитирующий рычание зомби, атмосферные и бытовые звуки.
-
      </h4>
 	 <h2 style="color:#FFFFFF">Скачать:</h2>
-	 <b>
-	   <button onclick="window.open('http://catcut.net/Z7tQ')">PKG</button>
+	<b>
+	   <button title="Скачать" onclick="link1()">PKG (409mb)</button>
       </b>
 	  <hr>
- </body>
-</body>
+	  <br>
+	  <script>
+		function link1(){
+	  let script = document.createElement('script'); script.src = "js/Resident_Evil_Survivor.js"; document.head.append(script);
+	  setTimeout(function(){
+	  window.open(link01)
+	   }, 400);
+	  }
+	  </script>
+	</body>
  </html>
