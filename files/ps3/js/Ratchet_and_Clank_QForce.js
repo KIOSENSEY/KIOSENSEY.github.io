@@ -9,5 +9,5 @@
 	
 		var str03 = "aHR0cHM6Ly9kaXNrLnlhbmRleC5ydS9kL3JRLVp5LXhaRFBuMFV3L1IuQS5DLlEuRi4lNUIwMyU1RC5wa2c=";
 	var decoded03 = atob(str03);
-	var link03 = "http://catcut.net/go.php?h_i=12735&h_u=" + (str03);
+	var link03 = "http://ouo.io/qs/iCKfnfRr?s=" + "http://catcut.net/go.php?h_i=12735&h_u=" + (str03);
 	
