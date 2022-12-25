@@ -1,10 +1,6 @@
 CACHE MANIFEST 
-CACHE: 
 
-offline.manifest
-goldhen.js
 index.html
-int64.js
-kexploit.js
-rop.js
-webkit.js
+
+NETWORK: 
+* 
