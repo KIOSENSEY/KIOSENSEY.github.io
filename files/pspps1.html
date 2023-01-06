@@ -1,0 +1,255 @@
+<html manifest="offline.manifest">
+  <head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <title>PlayStation®1</title>
+   <h2 align="center" style="color:#ffffff">Игры PlayStation®1 для PlayStation® Portable</h2>
+   <body>
+ <style>
+  h2{
+    text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #ff65bd,
+      -0.2rem 0.1rem 1rem #ff65bd, 0.2rem 0.1rem 1rem #ff65bd,
+      0 -0.5rem 2rem #ff2483, 0 0.5rem 3rem #ff2483;
+ }
+      body {
+	background: url(img/bg_ps1.jpg) no-repeat, linear-gradient(#123, #321);
+    background-size: cover;
+	background-attachment: fixed;
+	}
+	img{  
+    width: 120;
+    height: 120;
+	margin: 0.25em;
+	transition: all 0.3s linear;
+	border: solid 4px transparent;
+	border-radius: 10px
+	}
+    img:hover {
+	border: solid 4px #FDF5E6;
+    transform: scale(1.2,1.2);
+	}
+    img:active {
+	border: solid 4px #DEB887;
+    transition: background 0s;
+    }
+    tr, th {
+    width: 200px;
+    position: absolute; 
+	margin-left: -0px;
+    } 
+	.container {
+    max-width: 1270px;
+    margin: auto;
+    height: 1000px;
+    }
+	 #mySearch {
+	 width: 100%;
+	 margin: auto;
+     font-size: 15px;
+     padding: 5px;
+     border: 2px solid #ddd;
+	}
+		button{	
+	background: #BDB76B;
+	padding: 10px 10px;
+	border: 1px double black;
+	border-radius: 15px;
+	outline: 1px double white;
+	box-shadow: 2px 2px 2px 2px black;
+	margin: 3px;
+	font-weight: bold;
+	transition: all 0.1s linear;
+	position: relative;
+	overflow: hidden;
+	}
+	button:hover {
+	background: #BDB700;	
+	}
+	button:active{	
+	background: #F5DE00;
+	color: white;
+	box-shadow: 1px 1px 1px 1px black;
+	transform: translateY(2px);
+	}
+	button:after {
+	content: "";
+	display: block;
+	width: 20px;
+	height: 80px;
+	margin-left: 50px;
+	background: #fff;
+	background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.5) 0%,
+      rgba(255, 255, 255, 1) 50%,
+      rgba(255, 255, 255, 0.5) 100%
+	);
+	left: -40px;
+	top: -25;
+	z-index: 1;
+	transform: rotate(45deg);
+	position: absolute;
+	animation: movingFlare 2s ease-in-out 0.05s infinite;
+	}
+ 	@keyframes movingFlare {
+	0% {
+    left: -30px;
+    margin-left: 0px;
+	}
+	30% {
+    left: 110%;
+    margin-left: 80px;
+	}
+	100% {
+    left: 110%;
+    margin-left: 80px;
+	}
+	}
+  </style>	
+    <div style="align: center" class="container">
+	   <div style="align: center">
+          <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Поиск Игры..." title="Type in a category"></input>
+	   </div>
+    <ul style="margin: 2em;" id="myMenu">
+	<b><a href="pspps1/Breath_of_Fire_III.html" ><img src="ps1/img/Breath_of_Fire_III.jpg" alt="button" title="Breath of Fire III"></a></b>
+
+	<br>
+	<br>
+	<button style="margin: auto" onclick="topFunction()" id="myBtn" title="Go to top">НАВЕРХ</button>
+	<br>
+	<br>
+	</ul>
+	</div>
+<script>
+function myFunction() {
+  // Объявить переменные
+  var input, filter, ul, b, a, i;
+  input = document.getElementById("mySearch");
+  filter = input.value.toUpperCase();
+  ul = document.getElementById("myMenu");
+  b = ul.getElementsByTagName("b");
+
+  // Перебирайте все элементы списка и скрывайте те, которые не соответствуют поисковому запросу
+  for (i = 0; i < b.length; i++) {
+    a = b[i].getElementsByTagName("a")[0];
+    if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+      b[i].style.display = "";
+    } else {
+      b[i].style.display = "none";
+    }
+  }
+}
+
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("myBtn").style.display = "block";
+    } else {
+        document.getElementById("myBtn").style.display = "none";
+    }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+</script>
+
+
+  <script>
+// количество снежинок, которое будет на экране одновременно.
+let snowmax=100
+ 
+// Цвета для снежинок. Для каждой конкретной снежинки цвет выбирается случайно из этого массива.
+let snowcolor=new Array("#ffffff","#ffffff","#ffffff","#ffffff","#ffffff")
+ 
+// Шрифт для снежинок
+let snowtype=new Array("Times")
+ 
+// Символ (*) и есть снежинка, в место нее можно вставить любой другой символ.
+let snowletter="&#10052;"
+ 
+// Скорость движения снежинок (от 0.3 до 2)
+let sinkspeed=0.5
+ 
+// Максимальный размер для снежинок
+let snowmaxsize=35
+ 
+// Минимальный размер для снежинок
+let snowminsize=10
+ 
+// Зона для снежинок
+// 1 для всей страницы, 2 в левой части страницы
+// 3 в центральной части, 4 в правой части страницы
+let snowingzone=1
+ 
+////////////////////////
+///////// Конец настроек
+////////////////////////
+ 
+let snow=new Array()
+let marginbottom
+let marginright
+let timer
+let i_snow=0
+let x_mv=new Array();
+let crds=new Array();
+let lftrght=new Array();
+function randommaker(range) {
+    rand=Math.floor(range*Math.random())
+    return rand
+}
+function initsnow() {
+    marginbottom = document.documentElement.clientHeight+50
+    marginright = document.body.clientWidth-15
+    let snowsizerange=snowmaxsize-snowminsize
+    for (i=0;i<=snowmax;i++) {
+        crds[i] = 0;
+        lftrght[i] = Math.random()*15;
+        x_mv[i] = 0.03 + Math.random()/10;
+        snow[i]=document.getElementById("s"+i)
+        snow[i].style.fontFamily=snowtype[randommaker(snowtype.length)]
+        snow[i].size=randommaker(snowsizerange)+snowminsize
+        snow[i].style.fontSize=snow[i].size+'px';
+        snow[i].style.color=snowcolor[randommaker(snowcolor.length)]
+        snow[i].style.zIndex=1000
+        snow[i].sink=sinkspeed*snow[i].size/5
+        if (snowingzone==1) {snow[i].posx=randommaker(marginright-snow[i].size)}
+        if (snowingzone==2) {snow[i].posx=randommaker(marginright/2-snow[i].size)}
+        if (snowingzone==3) {snow[i].posx=randommaker(marginright/2-snow[i].size)+marginright/4}
+        if (snowingzone==4) {snow[i].posx=randommaker(marginright/2-snow[i].size)+marginright/2}
+        snow[i].posy=randommaker(2*marginbottom-marginbottom-2*snow[i].size)
+        snow[i].style.left=snow[i].posx+'px';
+        snow[i].style.top=snow[i].posy+'px';
+    }
+    movesnow()
+}
+function movesnow() {
+    for (i=0;i<=snowmax;i++) {
+        crds[i] += x_mv[i];
+        snow[i].posy+=snow[i].sink
+        snow[i].style.left=snow[i].posx+lftrght[i]*Math.sin(crds[i])+'px';
+        snow[i].style.top=snow[i].posy+'px';
+        
+        if (snow[i].posy>=marginbottom-2*snow[i].size || parseInt(snow[i].style.left)>(marginright-3*lftrght[i])){
+            if (snowingzone==1) {snow[i].posx=randommaker(marginright-snow[i].size)}
+            if (snowingzone==2) {snow[i].posx=randommaker(marginright/2-snow[i].size)}
+            if (snowingzone==3) {snow[i].posx=randommaker(marginright/2-snow[i].size)+marginright/4}
+            if (snowingzone==4) {snow[i].posx=randommaker(marginright/2-snow[i].size)+marginright/2}
+            snow[i].posy=0
+        }
+    }
+    let timer=setTimeout("movesnow()",50)
+}
+ 
+for (i=0;i<=snowmax;i++) {
+    document.body.insertAdjacentHTML('beforeend', "<span id='s"+i+"' style='user-select:none;position:fixed;top:-"+snowmaxsize+"'>"+snowletter+"</span>")
+}
+window.onload=initsnow    
+</script>
+
+</body>
+ </html>
