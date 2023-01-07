@@ -18,6 +18,6 @@
 	var decoded05 = atob(str05);
 	var link05 = "http://catcut.net/go.php?h_i=12735&h_u=" + (str05);
 	
-		var str06 = "aHR0cHM6Ly9pY2Vkcml2ZS5uZXQvcy94OWhoejJiWU5CUVdYdkN1eUJEOFcyaUZDeXky";
+		var str06 = "aHR0cHM6Ly9pY2Vkcml2ZS5uZXQvcy9ORmZ6WFI2QjdXM2g5aGtGWlBBdkJqOTF1emFR";
 	var decoded06 = atob(str06);
 	var link06 = "http://ouo.io/qs/iCKfnfRr?s=" + "http://catcut.net/go.php?h_i=12735&h_u=" + (str06);
