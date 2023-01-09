@@ -18,6 +18,6 @@
 	var decoded05 = atob(str05);
 	var link05 = "http://catcut.net/go.php?h_i=12735&h_u=" + (str05);
 	
-		var str06 = "aHR0cHM6Ly9pY2Vkcml2ZS5uZXQvcy9ORmZ6WFI2QjdXM2g5aGtGWlBBdkJqOTF1emFR";
+		var str06 = "aHR0cHM6Ly9kb3dubG9hZC5zYmVyZGlzay5ydS9kb3dubG9hZC9maWxlLzQzMTQ3OTk0MT90b2tlbj1PanNHYVR1bklaS2RoVTMmZmlsZW5hbWU9T3BlcmF0aW9uIEZsYXNocG9pbnQgRHJhZ29uIFJpc2luZ1tCTEVTMDA1OTddW0VOR10uaXNv";
 	var decoded06 = atob(str06);
-	var link06 = "http://ouo.io/qs/iCKfnfRr?s=" + "http://catcut.net/go.php?h_i=12735&h_u=" + (str06);
+	var link06 = "http://ouo.io/qs/iCKfnfRr?s=" + "http://q32.ru/65495/" + "http://catcut.net/go.php?h_i=12735&h_u=" + (str06);
