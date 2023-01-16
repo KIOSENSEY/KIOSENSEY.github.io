@@ -1,5 +1,10 @@
 CACHE MANIFEST 
-CACHE:
-7.55.html
+CACHE: 
+
 offline.manifest
-files\js\jb.js
+goldhen.js
+index.html
+int64.js
+kexploit.js
+rop.js
+webkit.js
