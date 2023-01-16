@@ -1,22 +1,241 @@
 <html manifest="offline.manifest">
-<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
-  <body>
-	<head>
-	<style>
-	body{
-	background: linear-gradient(#000, #008);
+  <head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <title>KioSensey</title>
+   <h1 align="center" style="color:#ffffff"></h1>
+<style>
+      body {
+    background: #888888 url(files/img/bg) no-repeat;
     background-size: cover;
+    background-attachment: fixed;
 	}
-	</style>
-		<title>PlayStation®4 9.00 GoldHEN 2.3</title>
-		<script src="webkit.js"></script>
-		<script src="goldhen.js"></script>
-		<script src="int64.js"></script>
-		<script src="rop.js"></script>
-		<script src="kexploit.js"></script>
-	<script>
-		setTimeout(poc, 1000);
-	</script>
-	</head>
-	</body>
-</html>
+	img{  
+    width: 170;
+    height: 200;
+	margin: 0.25em;
+	transition: all 0.3s linear;
+	border: solid 5px transparent;
+	}
+    img:hover {
+    transform: translateY(22px) scale(1.1,1.1);
+	border: solid 5px #D3D3D3;
+	}
+	img:active {
+	border: solid 5px #DEB887;
+    transition: background 0s;
+    }
+  </style>
+	  <br>
+  <div align="center">	
+  <a href="chapter_ps4.html" return false" ><img src="files/img/ps4" alt="button"></a>	
+  <a href="chapter_ps3.html" return false" ><img src="files/img/ps3" alt="button"></a>  
+  <a href="chapter_psp.html" return false" ><img src="files/img/psp" alt="button"></a>
+  <a href="https://talkrooms.ru/#KIOSENSEY" return false" ><img src="files/img/Messenger" alt="button"></a>	
+  <a href="https://vk.com/play_unity" return false" ><img src="files/img/vk" alt="button"></a>
+  <a href="https://discord.gg/Yxtfnjad8u" return false" ><img src="files/img/Discord" alt="button"></a>
+  
+</div>
+<br><br><br>
+<div align="center">
+<canvas  id="canvas"  width="150" height="150">The current time</canvas>
+</div>
+
+
+	  <script>
+// количество снежинок, которое будет на экране одновременно.
+let snowmax=100
+ 
+// Цвета для снежинок. Для каждой конкретной снежинки цвет выбирается случайно из этого массива.
+let snowcolor=new Array("#ffffff","#ffffff","#ffffff","#ffffff","#ffffff")
+ 
+// Шрифт для снежинок
+let snowtype=new Array("Times")
+ 
+// Символ (*) и есть снежинка, в место нее можно вставить любой другой символ.
+let snowletter="&#10052;"
+ 
+// Скорость движения снежинок (от 0.3 до 2)
+let sinkspeed=0.5
+ 
+// Максимальный размер для снежинок
+let snowmaxsize=35
+ 
+// Минимальный размер для снежинок
+let snowminsize=10
+ 
+// Зона для снежинок
+// 1 для всей страницы, 2 в левой части страницы
+// 3 в центральной части, 4 в правой части страницы
+let snowingzone=1
+ 
+////////////////////////
+///////// Конец настроек
+////////////////////////
+ 
+let snow=new Array()
+let marginbottom
+let marginright
+let timer
+let i_snow=0
+let x_mv=new Array();
+let crds=new Array();
+let lftrght=new Array();
+function randommaker(range) {
+    rand=Math.floor(range*Math.random())
+    return rand
+}
+function initsnow() {
+    marginbottom = document.documentElement.clientHeight+50
+    marginright = document.body.clientWidth-15
+    let snowsizerange=snowmaxsize-snowminsize
+    for (i=0;i<=snowmax;i++) {
+        crds[i] = 0;
+        lftrght[i] = Math.random()*15;
+        x_mv[i] = 0.03 + Math.random()/10;
+        snow[i]=document.getElementById("s"+i)
+        snow[i].style.fontFamily=snowtype[randommaker(snowtype.length)]
+        snow[i].size=randommaker(snowsizerange)+snowminsize
+        snow[i].style.fontSize=snow[i].size+'px';
+        snow[i].style.color=snowcolor[randommaker(snowcolor.length)]
+        snow[i].style.zIndex=1000
+        snow[i].sink=sinkspeed*snow[i].size/5
+        if (snowingzone==1) {snow[i].posx=randommaker(marginright-snow[i].size)}
+        if (snowingzone==2) {snow[i].posx=randommaker(marginright/2-snow[i].size)}
+        if (snowingzone==3) {snow[i].posx=randommaker(marginright/2-snow[i].size)+marginright/4}
+        if (snowingzone==4) {snow[i].posx=randommaker(marginright/2-snow[i].size)+marginright/2}
+        snow[i].posy=randommaker(2*marginbottom-marginbottom-2*snow[i].size)
+        snow[i].style.left=snow[i].posx+'px';
+        snow[i].style.top=snow[i].posy+'px';
+    }
+    movesnow()
+}
+function movesnow() {
+    for (i=0;i<=snowmax;i++) {
+        crds[i] += x_mv[i];
+        snow[i].posy+=snow[i].sink
+        snow[i].style.left=snow[i].posx+lftrght[i]*Math.sin(crds[i])+'px';
+        snow[i].style.top=snow[i].posy+'px';
+        
+        if (snow[i].posy>=marginbottom-2*snow[i].size || parseInt(snow[i].style.left)>(marginright-3*lftrght[i])){
+            if (snowingzone==1) {snow[i].posx=randommaker(marginright-snow[i].size)}
+            if (snowingzone==2) {snow[i].posx=randommaker(marginright/2-snow[i].size)}
+            if (snowingzone==3) {snow[i].posx=randommaker(marginright/2-snow[i].size)+marginright/4}
+            if (snowingzone==4) {snow[i].posx=randommaker(marginright/2-snow[i].size)+marginright/2}
+            snow[i].posy=0
+        }
+    }
+    let timer=setTimeout("movesnow()",50)
+}
+ 
+for (i=0;i<=snowmax;i++) {
+    document.body.insertAdjacentHTML('beforeend', "<span id='s"+i+"' style='user-select:none;position:fixed;top:-"+snowmaxsize+"'>"+snowletter+"</span>")
+}
+window.onload=initsnow    
+</script>
+
+
+<script>
+function clock() {
+  const now = new Date();
+  const canvas = document.getElementById('canvas');
+  const ctx = canvas.getContext('2d');
+  ctx.save();
+  ctx.clearRect(0, 0, 150, 150);
+  ctx.translate(75, 75);
+  ctx.scale(0.5, 0.5);
+  ctx.rotate(-Math.PI / 2);
+  ctx.strokeStyle = 'black';
+  ctx.fillStyle = 'white';
+  ctx.lineWidth = 8;
+  ctx.lineCap = 'round';
+
+  // Часовые Стрелки
+  ctx.save();
+  for (let i = 0; i < 12; i++) {
+    ctx.beginPath();
+    ctx.rotate(Math.PI / 6);
+    ctx.moveTo(100, 0);
+    ctx.lineTo(120, 0);
+    ctx.stroke();
+  }
+  ctx.restore();
+
+  // MМинутные Стрелки
+  ctx.save();
+  ctx.lineWidth = 5;
+  for (let i = 0; i < 60; i++) {
+    if (i % 5 !== 0) {
+      ctx.beginPath();
+      ctx.moveTo(117, 0);
+      ctx.lineTo(120, 0);
+      ctx.stroke();
+    }
+    ctx.rotate(Math.PI / 30);
+  }
+  ctx.restore();
+
+  const sec = now.getSeconds();
+  const min = now.getMinutes();
+  const hr  = now.getHours() % 12;
+
+  ctx.fillStyle = 'black';
+
+  // Write image description
+  canvas.innerText = `The time is: ${hr}:${min}`; 
+
+  // Write Hours
+  ctx.save();
+  ctx.rotate((Math.PI / 6) * hr + (Math.PI / 360) * min + (Math.PI / 21600) * sec);
+  ctx.lineWidth = 14;
+  ctx.beginPath();
+  ctx.moveTo(-20, 0);
+  ctx.lineTo(80, 0);
+  ctx.stroke();
+  ctx.restore();
+
+  // Write Minutes
+  ctx.save();
+  ctx.rotate((Math.PI / 30) * min + (Math.PI / 1800) * sec);
+  ctx.lineWidth = 10;
+  ctx.beginPath();
+  ctx.moveTo(-28, 0);
+  ctx.lineTo(112, 0);
+  ctx.stroke();
+  ctx.restore();
+
+  // Write seconds
+  ctx.save();
+  ctx.rotate(sec * Math.PI / 30);
+  ctx.strokeStyle = '#D40000';
+  ctx.fillStyle = '#D40000';
+  ctx.lineWidth = 6;
+  ctx.beginPath();
+  ctx.moveTo(-30, 0);
+  ctx.lineTo(83, 0);
+  ctx.stroke();
+  ctx.beginPath();
+  ctx.arc(0, 0, 10, 0, Math.PI * 2, true);
+  ctx.fill();
+  ctx.beginPath();
+  ctx.arc(95, 0, 10, 0, Math.PI * 2, true);
+  ctx.stroke();
+  ctx.fillStyle = 'rgba(0, 0, 0, 0)';
+  ctx.arc(0, 0, 3, 0, Math.PI * 2, true);
+  ctx.fill();
+  ctx.restore();
+
+  ctx.beginPath();
+  ctx.lineWidth = 14;
+  ctx.strokeStyle = '#325FA2';
+  ctx.arc(0, 0, 142, 0, Math.PI * 2, true);
+  ctx.stroke();
+
+  ctx.restore();
+
+  window.requestAnimationFrame(clock);
+}
+
+window.requestAnimationFrame(clock);
+</script>
+</body>
+ </html>
