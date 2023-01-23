@@ -7,7 +7,7 @@
 	  <hr>
 <style>
       body {
-    background: #888888 url(bg/Turok.jpg) no-repeat;
+    background: url(bg/Turok.jpg) no-repeat, linear-gradient(#123, #321);
     background-size: cover;
 	background-attachment: fixed;
 	}
@@ -57,25 +57,50 @@
 Вы хотите побывать на месте героев фильма Стивена Спилберга «Парк юрского периода»? Новая часть культовой игры-сериала Turok, созданная специально для игровых систем нового поколения – определенно для вас
      </h4>
 	 <h2 style="color:#FFFFFF">Скачать:</h2>
-	 <b>
-	   <button title="Скачать" onclick="window.open(link01)">PKG 1 (3.97gb)</button>
-	   <button title="Скачать" onclick="window.open(link02)">PKG 2 (1.74gb)</button>
-	   <button title="Скачать" onclick="window.open(link03)">PKG 3 (17mb)</button>
+	<b>
+	   <button title="Скачать" onclick="link1()">PKG 1 (3.97gb)</button>
+	   <button title="Скачать" onclick="link2()">PKG 2 (1.74gb)</button>
+	   <button title="Скачать" onclick="link3()">PKG 3 (17mb)</button>
       </b>
 	  <hr>
 	  <br>
-	  	 <script>
-		var str01 = "aHR0cHM6Ly9kaXNrLnlhbmRleC5ydS9kL1R6aEtuNnktbWkwNzZ3";
-	var decoded01 = atob(str01);
-	var link01 = "http://ouo.io/qs/iCKfnfRr?s=" + "http://catcut.net/go.php?h_i=12735&h_u=" + (str01);
-	
-		var str02 = "aHR0cHM6Ly9kaXNrLnlhbmRleC5ydS9kL0Q5M29oQWlqa1JFcFFB";
-	var decoded02 = atob(str02);
-	var link02 = "http://catcut.net/go.php?h_i=12735&h_u=" + (str02);
-	
-		var str03 = "aHR0cHM6Ly9kaXNrLnlhbmRleC5ydS9kLy1tSzJLbXJqSnB3alln";
-	var decoded03 = atob(str03);
-	var link03 = "http://catcut.net/go.php?h_i=12735&h_u=" + (str03);	
-		</script>
+	  <script>
+		function link1(){
+	  let script = document.createElement('script'); script.src = "js/Turok.js"; document.head.append(script);
+	  setTimeout(function(){
+	  window.open(link01)
+	   }, 400);
+	  }
+		function link2(){
+	  let script = document.createElement('script'); script.src = "js/Turok.js"; document.head.append(script);
+	  setTimeout(function(){
+	  window.open(link02)
+	  	   }, 400);
+	  }
+		function link3(){
+	  let script = document.createElement('script'); script.src = "js/Turok.js"; document.head.append(script);
+	  setTimeout(function(){
+	  window.open(link03)
+	  	   }, 400);
+	  }
+	  	function link4(){
+	  let script = document.createElement('script'); script.src = "js/Turok.js"; document.head.append(script);
+	  setTimeout(function(){
+	  window.open(link04)
+	   }, 400);
+	  }
+		function link5(){
+	  let script = document.createElement('script'); script.src = "js/Turok.js"; document.head.append(script);
+	  setTimeout(function(){
+	  window.open(link05)
+	  	   }, 400);
+	  }
+		function link6(){
+	  let script = document.createElement('script'); script.src = "js/Turok.js"; document.head.append(script);
+	  setTimeout(function(){
+	  window.open(link06)
+	  	   }, 400);
+	  }
+	  </script>
 	</body>
  </html>
