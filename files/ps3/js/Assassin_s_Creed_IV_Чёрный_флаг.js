@@ -8,7 +8,7 @@
 	
 		var str03 = "aHR0cHM6Ly92ay5jb20vZG9jLTE5Njc2NjQzM182NTc3MTk1NDc/aGFzaD0xOE9EUTRVUldKTERac1M5ZU5LRWFZN2pla29OUTZDblFyYVh2OWt4cVdEJmRs";
 	var decoded03 = atob(str03);
-	var link03 = "http://ouo.io/qs/iCKfnfRr?s=" + "http://catcut.net/go.php?h_i=12735&h_u=" + (str03);
+	var link03 = "https://exe.io/st?api=2ed10d749840c3b77d1a23c29947d39c83882ac6&url=" + "http://catcut.net/go.php?h_i=12735&h_u=" + (str03);
 	
 		var str04 = "aHR0cHM6Ly92ay5jb20vZG9jLTE5Njc2NjQzM182NTc3MjAyODk/aGFzaD1mNEtiYXNkZXFVbnM1eXNaSnlHazRIaEJacW1aWElTVXRBTEF3am5aUFRMJmRs";
 	var decoded04 = atob(str04);
