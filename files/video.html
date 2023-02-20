@@ -5,23 +5,30 @@
    <h2 align="center" style="color:#ffffff">Видео</h2>
    <body>
  <style>
+ h2{
+    text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #ff65bd,
+      -0.2rem 0.1rem 1rem #ff65bd, 0.2rem 0.1rem 1rem #ff65bd,
+      0 -0.5rem 2rem #ff2483, 0 0.5rem 3rem #ff2483;
+ }
       body {
-	background: #888 url(img/bg_ps1.jpg) no-repeat;
+	background: url(img/video.jpg) no-repeat, linear-gradient(#123, #321);
     background-size: cover;
 	background-attachment: fixed;
 	}
 	img{  
-    width: 150;
-    height: 200;
+    width: 120;
+    height: 180;
 	margin: 0.25em;
 	transition: all 0.3s linear;
 	border: solid 4px transparent;
 	border-radius: 10px
 	}
     img:hover {
+	border: solid 4px #FDF5E6;
     transform: scale(1.2,1.2);
 	}
     img:active {
+	border: solid 4px #DEB887;
     transition: background 0s;
     }
     tr, th {
@@ -41,15 +48,69 @@
      padding: 5px;
      border: 2px solid #ddd;
 	}
+		button{	
+	background: #BDB76B;
+	padding: 10px 10px;
+	border: 1px double black;
+	border-radius: 15px;
+	outline: 1px double white;
+	box-shadow: 2px 2px 2px 2px black;
+	margin: 3px;
+	font-weight: bold;
+	transition: all 0.1s linear;
+	position: relative;
+	overflow: hidden;
+	}
+	button:hover {
+	background: #BDB700;	
+	}
+	button:active{	
+	background: #F5DE00;
+	color: white;
+	box-shadow: 1px 1px 1px 1px black;
+	transform: translateY(2px);
+	}
+	button:after {
+	content: "";
+	display: block;
+	width: 20px;
+	height: 80px;
+	margin-left: 50px;
+	background: #fff;
+	background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.5) 0%,
+      rgba(255, 255, 255, 1) 50%,
+      rgba(255, 255, 255, 0.5) 100%
+	);
+	left: -40px;
+	top: -25;
+	z-index: 1;
+	transform: rotate(45deg);
+	position: absolute;
+	animation: movingFlare 2s ease-in-out 0.05s infinite;
+	}
+ 	@keyframes movingFlare {
+	0% {
+    left: -30px;
+    margin-left: 0px;
+	}
+	30% {
+    left: 110%;
+    margin-left: 80px;
+	}
+	100% {
+    left: 110%;
+    margin-left: 80px;
+	}
+	}
   </style>	
     <div style="align: center" class="container">
 	   <div style="align: center">
           <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Поиск Видео..." title="Type in a category"></input>
 	   </div>
     <ul style="margin: 2em;" id="myMenu">
-	<b><a href="http://getfile.dokpub.com/yandex/get/https://disk.yandex.ru/i/QD2Us-mvt2Jr9w" ><img src="video/img/PlayStation.jpg" alt="button" title="PlayStation"></a></b>
-	<b><a href="https://disk.yandex.ru/d/wBxgMQrpLeml0g/Jurassic_World_Dominion.mp4" ><img src="video/img/Jurassic_World_Dominion.png" alt="button" title="Jurassic World™: Dominion / Мир Юрского периода™: Господство"></a></b>
-	<b><a href="https://disk.yandex.ru/d/I0ZARvRplS_smA/Sonic_The_Hedgehog_2.mp4" ><img src="video/img/Sonic_The_Hedgehog_2.png" alt="button" title="Sonic The Hedgehog 2 / Соник 2 В Кино"></a></b>
+	<b><a href="https://disk.yandex.ru/d/OGIp-7mK_w08fQ/6-%D1%8F_%D1%81%D0%B5%D1%80%D0%B8%D1%8F.mp4" ><img src="video/img/Одни_Из_Нас_1_6.jpg" alt="button" title="Одни Из Нас"></a></b>
 
 	<br>
 	<br>
