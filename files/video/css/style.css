@@ -1,5 +1,27 @@
 	body{
-	background: #4169E1;
+	background: url(../bg/bg.jpg) no-repeat, linear-gradient(#123, #321);
+    background-size: cover;
+	background-attachment: fixed;
+	}
+	h1{	
+    text-shadow: 0 0 0.6rem #8B0000, 0 0 1.5rem #8B0000,
+      -0.2rem 0.1rem 1rem #8B0000, 0.2rem 0.1rem 1rem #8B0000,
+      0 -0.5rem 2rem #8B0000, 0 0.5rem 3rem #8B0000;
+	}
+	h2{	
+    text-shadow: 0 0 0.6rem #8B0000, 0 0 1.5rem #8B0000,
+      -0.2rem 0.1rem 1rem #8B0000, 0.2rem 0.1rem 1rem #8B0000,
+      0 -0.5rem 2rem #8B0000, 0 0.5rem 3rem #8B0000;
+	}
+	h3{	
+    text-shadow: black 1px 1px 0, black -1px -1px 0,
+	             black -1px 1px 0, black 1px -1px 0;
+	margin-left: 35px;
+	}
+	h4{	
+    text-shadow: black 1px 1px 0, black -1px -1px 0,
+	             black -1px 1px 0, black 1px -1px 0;
+	margin-left: 35px;
 	}
 	video{
 	width: 1200;
