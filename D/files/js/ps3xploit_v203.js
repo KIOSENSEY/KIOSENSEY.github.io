@@ -857,8 +857,8 @@ function ps3chk(){
 	var ua = navigator.userAgent;
 	var uaStringCheck = ua.substring(ua.indexOf("5.0 (") + 5, ua.indexOf(") Apple") - 7);
 	var fwVersion = ua.substring(ua.indexOf("5.0 (") + 19, ua.indexOf(") Apple"));
-	var msgHFW = "ATTENTION!\n\nYour firmware version requires HFW (Hybrid Firmware) to be installed. OFW is not supported!\n\nThis page cannot distinguish between OFW and HFW.";
-	var msgCongrats = "Congratulations! We've detected your PlayStation 3 is running FW " + fwVersion + ", which is compatible with PS3Xploit! Enjoy!";
+	var msgHFW = "               ВНИМАНИЕ!!!\n\nВаша версия прошивки " + fwVersion + "\nЕсли установлена Гибридная Прошивка HFW то нажмите OK и продолжайте операцию. Если установлена Официальная Прошивка OFW то прекратите операцию, установите Гибридную Прошивку HFW и начните операцию заново.";
+	var msgCongrats = "Поздравляем! Мы обнаружили, что на вашей PlayStation 3 установлена ​​прошивка. " + fwVersion + ", поэтому, продолжайте операцию.";
 	resetOptions();	
 	switch (uaStringCheck) {
 		case "PLAYSTATION":
@@ -1293,7 +1293,7 @@ function ps3chk(){
 					break;		
 					
 				default:
-					alert("Your PS3 is not on FW 4.10+! Your current running FW version is " + fwVersion + ", which is not compatible with PS3Xploit. All features have been disabled");
+					alert("Ваша PS3 не на FW 4.10+! Ваша текущая работающая версия FW: " + fwVersion + ", который несовместим с PS3Xploit. Все функции отключены");
 					disable_btn();
 					disable_cb();
 					break;
@@ -1301,7 +1301,7 @@ function ps3chk(){
 			break;
 		
 		default:
-			alert("You are not on a PlayStation System! All features have been disabled");
+			alert("Вы не используете систему PlayStation! Все функции отключены");
 			disable_btn();
 			disable_cb();
 			break;
