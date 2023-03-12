@@ -33,19 +33,4 @@
 	margin: 0 auto;
     display: block;
 	}
-	a{	
-	background: #BDB76B;
-	padding: 10px 10px;
-	border: 1px double black;
-	border-radius: 15px;
-	outline: 1px double white;
-	box-shadow: 2px 2px 2px 2px black;
-	margin: 3px;
-	font-weight: bold;
-	transition: all 0.1s linear;
-	position: relative;
-	overflow: hidden;
-	margin: 0 auto;
-    display: block;
-	}
 	
