@@ -1,118 +1,15 @@
 <html manifest="offline.manifest">
   <head>
    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <link rel="stylesheet" href="css/ps3_style.css">
    <title>PlayStation®3</title>
    <h2 align="center" style="color:#ffffff">PlayStation®3 Игры</h2>
    <body>
- <style>
-	h2{
-    text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #ff65bd,
-      -0.2rem 0.1rem 1rem #ff65bd, 0.2rem 0.1rem 1rem #ff65bd,
-      0 -0.5rem 2rem #ff2483, 0 0.5rem 3rem #ff2483;
-	}
-    body {
-	background: url(img/bg_ps3.jpg) no-repeat, linear-gradient(#123, #321);
-	background-size: cover;
-	background-attachment: fixed;
-	}
-	img{  
-    width: 120;
-    height: 150;
-	margin: 0.25em;
-	transition: all 0.3s linear;
-	border: solid 4px transparent;
-	border-radius: 10px;
-	}
-    img:hover {
-	border: solid 4px #FDF5E6;
-    transform: scale(1.2,1.2);
-	}
-    img:active {
-	border: solid 4px #DEB887;
-    transition: background 0s;
-    }
-	.container {
-    max-width: 1270px;
-    margin: auto;
-    height: 1000px;
-    }
-	#mySearch {
-	width: 100%;
-	margin: auto;
-    font-size: 15px;
-    padding: 5px;
-    border: 2px solid #ddd;
-	}
-	#myBtn:hover{
-	transform: scale(1.2,1.2);
-	}
-	img[title]: {
-	color: #000000;
-	background: #FFE4B5;
-   }
-	button{	
-	background: #BDB76B;
-	padding: 10px 10px;
-	border: 1px double black;
-	border-radius: 15px;
-	outline: 1px double white;
-	box-shadow: 2px 2px 2px 2px black;
-	margin: 3px;
-	font-weight: bold;
-	transition: all 0.1s linear;
-	position: relative;
-	overflow: hidden;
-	}
-	button:hover {
-	background: #BDB700;	
-	}
-	button:active{	
-	background: #F5DE00;
-	color: white;
-	box-shadow: 1px 1px 1px 1px black;
-	transform: translateY(2px);
-	}
-	button:after {
-	content: "";
-	display: block;
-	width: 20px;
-	height: 80px;
-	margin-left: 50px;
-	background: #fff;
-	background: linear-gradient(
-      to bottom,
-      rgba(255, 255, 255, 0.5) 0%,
-      rgba(255, 255, 255, 1) 50%,
-      rgba(255, 255, 255, 0.5) 100%
-	);
-	left: -40px;
-	top: -25;
-	z-index: 1;
-	transform: rotate(45deg);
-	position: absolute;
-	animation: movingFlare 2s ease-in-out 0.05s infinite;
-	}
- 	@keyframes movingFlare {
-	0% {
-    left: -30px;
-    margin-left: 0px;
-	}
-	30% {
-    left: 110%;
-    margin-left: 80px;
-	}
-	100% {
-    left: 110%;
-    margin-left: 80px;
-	}
-	}
-  </style>
     <div style="align: center" class="container">
 	   <div style="align: center">
-          <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Поиск Игры... Можно по тегам Гонки, Файтинг, Приключение, Шутер, Ролевые, Мувик, Спорт" title="Введите название Игры для поиска"></input>
+          <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Поиск Игры..." title="Введите название Игры для поиска"></input>
 	   </div>
-		<ul style="margin: 2em;" id="myMenu">
-
+    <ul style="margin: 2em;"id="myMenu">
 	<b><a href="ps3/eFootball_2023.html" ><img src="ps3/img/eFootball_2023.jpg" alt="button" title="eFootball™ 2023"></a></b>
 	<b><a href="ps3/Until_Dawn.html"><img src="ps3/img/Until_Dawn.jpg" alt="Until Dawn™" title="Until Dawn™" id="Приключение"></a></b>
 	<b><a href="ps3/L.A._Noire.html" ><img src="ps3/img/L.A._Noire.jpg" alt="L.A. Noire" title="L.A. Noire" id="Приключение"></a></b>
@@ -959,8 +856,7 @@
  	<b><a href="ps3/Angry_Birds_Star_Wars.html" ><img src="ps3/img/Angry_Birds_Star_Wars.jpg" alt="button" title="Angry Birds: Star Wars"></a></b>
  	<b><a href="ps3/HARD_CORPS_UPRISING.html" ><img src="ps3/img/HARD_CORPS_UPRISING.jpg" alt="button" title="HARD CORPS: UPRISING"></a></b>
  	<b><a href="ps3/LIMBO.html" ><img src="ps3/img/LIMBO.jpg" alt="button" title="LIMBO"></a></b>
-
-
+ 	<b><a href="ps3/STEINS_GATE.html" ><img src="ps3/img/STEINS_GATE.jpg" alt="button" title="STEINS;GATE"></a></b>
 	<br>
 	<br>
 	<br>
@@ -969,7 +865,7 @@
 	<button style="margin: auto" onclick="topFunction()" id="myBtn" title="ХЛЫСТАТЬ СТРАНИЦУ НАВЕРХ">НАВЕРХ</button>
 	<br>
 	<br>
-	<h2 align="center" style="color:#ffffff">Спасибо за просмотр страницы PlayStation®3 Игры</h2>
+	<h2 align="center" style="color:#ffffff">Спасибо за просмотр страницы Игры PlayStation® 3</h2>
 	<br>
 	<hr>
 	<br>
@@ -996,7 +892,6 @@ function myFunction() {
 }
 
 
-
 // When the user scrolls down 20px from the top of the document, show the button
 window.onscroll = function() {scrollFunction()};
 
@@ -1014,7 +909,6 @@ function topFunction() {
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
 </script>
-
 
 </body>
  </html>
