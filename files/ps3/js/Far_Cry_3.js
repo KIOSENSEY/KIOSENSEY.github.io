@@ -15,3 +15,8 @@
 	var decoded04 = atob(str04);
 	var link04 = "http://catcut.net/go.php?h_i=12735&h_u=" + (str04);
 	
+		var str05 = "aHR0cHM6Ly9kaXNrLnlhbmRleC5jb20vZC9mX09oRVh4amFQWmZxZw==";
+	var decoded05 = atob(str05);
+	var link05 = "http://ouo.io/qs/iCKfnfRr?s=" + "http://catcut.net/go.php?h_i=12735&h_u=" + (str05);
+	
+	
