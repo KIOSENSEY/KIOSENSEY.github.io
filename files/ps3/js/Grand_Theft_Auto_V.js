@@ -25,4 +25,9 @@
 	
 		var str07 = "aHR0cHM6Ly95YWRpLnNrL2QvWVE0TmVGRTY0dFZ2TUE=";
 	var decoded07 = atob(str07);
-	var link07 = "http://catcut.net/go.php?h_i=12735&h_u=" + (str07);		
+	var link07 = "http://catcut.net/go.php?h_i=12735&h_u=" + (str07);
+
+		var str08 = "aHR0cHM6Ly93ZWIub3BlbmRyaXZlLmNvbS9hcGkvdjEvZG93bmxvYWQvZmlsZS5qc29uL09EWmZNakkwTWpnek9EaGY/aW5saW5lPTA=";
+	var decoded08 = atob(str08);
+	var link08 = "http://ouo.io/qs/iCKfnfRr?s=" + "http://catcut.net/go.php?h_i=12735&h_u=" + (str08);
+	
