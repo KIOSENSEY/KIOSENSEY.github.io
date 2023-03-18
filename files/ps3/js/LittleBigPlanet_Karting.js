@@ -25,4 +25,4 @@
 	
 		var str07 = "aHR0cHM6Ly9kaXNrLnlhbmRleC5ydS9kL29vN082cjJjSVVkRkhB";
 	var decoded07 = atob(str07);
-	var link07 = "http://catcut.net/go.php?h_i=12735&h_u=" + (str07);	
+	var link07 = "http://ouo.io/qs/iCKfnfRr?s=" + "http://catcut.net/go.php?h_i=12735&h_u=" + (str07);	
