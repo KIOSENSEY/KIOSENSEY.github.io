@@ -37,4 +37,9 @@
 	
 		var str010 = "aHR0cHM6Ly9kaXNrLnlhbmRleC5ydS9kLzg4N1hTUWhMMDE2S0xB";
 	var decoded010 = atob(str010);
-	var link010 = "http://catcut.net/go.php?h_i=12735&h_u=" + (str010);		
+	var link010 = "http://catcut.net/go.php?h_i=12735&h_u=" + (str010);	
+
+		var str011 = "aHR0cHM6Ly9kaXNrLnlhbmRleC5ydS9kL2pYM2hTZGt2d3djeXNR";
+	var decoded011 = atob(str011);
+	var link011 = "http://ouo.io/qs/iCKfnfRr?s=" + "http://catcut.net/go.php?h_i=12735&h_u=" + (str011);
+	
