@@ -5,7 +5,7 @@
 	
 		var str02 = "aHR0cHM6Ly9kaXNrLnlhbmRleC5ydS9kLzRFcHhLM0VBVmQ2Z2p3L1QuUy4zLlQuVi5HLiU1QjAyJTVELnBrZz93PTE=";
 	var decoded02 = atob(str02);
-	var link02 = "https://exe.io/st?api=2ed10d749840c3b77d1a23c29947d39c83882ac6&url=" + "http://catcut.net/go.php?h_i=12735&h_u=" + (str02);
+	var link02 = "http://q32.ru/65495/" + "http://catcut.net/go.php?h_i=12735&h_u=" + (str02);
 	
 		var str03 = "aHR0cHM6Ly9kaXNrLnlhbmRleC5ydS9kLzRFcHhLM0VBVmQ2Z2p3L1QuUy4zLlQuVi5HLiU1QjAzJTVELnBrZz93PTE=";
 	var decoded03 = atob(str03);
