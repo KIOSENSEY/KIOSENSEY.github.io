@@ -8,7 +8,7 @@
 	
 		var str03 = "aHR0cHM6Ly9kaXNrLnlhbmRleC5ydS9kL09HQVBuV01xaUI5RmpR";
 	var decoded03 = atob(str03);
-	var link03 = "http://q32.ru/65495/" + "http://q32.ru/65495/" + "http://catcut.net/go.php?h_i=12735&h_u=" + (str03);
+	var link03 = "http://catcut.net/go.php?h_i=12735&h_u=" + (str03);
 	
 		var str04 = "aHR0cHM6Ly9kaXNrLnlhbmRleC5ydS9kL184ajh2bFNRR2tYQTlR";
 	var decoded04 = atob(str04);

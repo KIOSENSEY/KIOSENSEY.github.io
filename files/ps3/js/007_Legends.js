@@ -4,8 +4,8 @@
 	
 		var str02 = "aHR0cHM6Ly9kaXNrLnlhbmRleC5ydS9kL2FPX1VqRFl5WUsyM0ZBLzAwNyUyMExlZ2VuZHMlMjAlNUIwMiU1RC5wa2c=";
 	var decoded02 = atob(str02);
-	var link02 = "https://exe.io/st?api=2ed10d749840c3b77d1a23c29947d39c83882ac6&url=" + "http://catcut.net/go.php?h_i=12735&h_u=" + (str02);
+	var link02 = "http://q32.ru/65495/" + "http://catcut.net/go.php?h_i=12735&h_u=" + (str02);
 	
 		var str03 = "aHR0cHM6Ly92ay5jb20vZG9jNTI1ODY5NTkxXzY1MzkwMjA2MT9oYXNoPVNpaEtGZjhZdmNlekx6YVlVWWlxTUdtajN3b2VUcURxUjhHWXp6NlRkdW8mZGw=";
 	var decoded03 = atob(str03);
-	var link03 = "http://q32.ru/65495/" + "http://catcut.net/go.php?h_i=12735&h_u=" + (str03);
+	var link03 = "http://catcut.net/go.php?h_i=12735&h_u=" + (str03);
