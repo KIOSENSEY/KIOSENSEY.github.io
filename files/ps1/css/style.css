@@ -1,11 +1,11 @@
 	img{  
 	margin-right: 35px;
 	cursor:none;
-    width: 420;
-    height: 420;
-	border: solid 4px #FDF5E6;
+    width: 400;
+    height: 400;
+		border: solid 4px #FDF5E6;
 	border-radius: 10px
-   	}
+	}
 	h1{
     text-shadow: black 1px 1px 0, black -1px -1px 0,
 	             black -1px 1px 0, black 1px -1px 0;
@@ -29,8 +29,8 @@
 	b {
 	margin-left: 35px;
 	}
-	button{	
-	background: #BDB76B;
+		button{	
+	background: #F5DEB3;
 	padding: 10px 10px;
 	border: 1px double black;
 	border-radius: 15px;
@@ -39,49 +39,12 @@
 	margin: 3px;
 	font-weight: bold;
 	transition: all 0.1s linear;
-	position: relative;
-	overflow: hidden;
 	}
 	button:hover {
-	background: #BDB700;	
 	}
 	button:active{	
-	background: #F5DE00;
+	background: #BDB76B;
 	color: white;
 	box-shadow: 1px 1px 1px 1px black;
 	transform: translateY(2px);
-	}
-	button:after {
-	content: "";
-	display: block;
-	width: 20px;
-	height: 80px;
-	margin-left: 50px;
-	background: #fff;
-	background: linear-gradient(
-      to bottom,
-      rgba(255, 255, 255, 0.5) 0%,
-      rgba(255, 255, 255, 1) 50%,
-      rgba(255, 255, 255, 0.5) 100%
-	);
-	left: -40px;
-	top: -25;
-	z-index: 1;
-	transform: rotate(45deg);
-	position: absolute;
-	animation: movingFlare 2s ease-in-out 0.05s infinite;
-	}
- 	@keyframes movingFlare {
-	0% {
-    left: -30px;
-    margin-left: 0px;
-	}
-	30% {
-    left: 110%;
-    margin-left: 80px;
-	}
-	100% {
-    left: 110%;
-    margin-left: 80px;
-	}
 	}
