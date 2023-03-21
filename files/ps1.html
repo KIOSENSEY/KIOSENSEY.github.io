@@ -1,115 +1,15 @@
 <html manifest="offline.manifest">
   <head>
    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-   <title>PlayStation®1</title>
+   <link rel="stylesheet" href="css/ps1_style.css">
+   <title>Игры PlayStation®1 для PlayStation®3</title>
    <h2 align="center" style="color:#ffffff">Игры PlayStation®1 для PlayStation®3</h2>
    <body>
- <style>
-  h2{
-    text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #ff65bd,
-      -0.2rem 0.1rem 1rem #ff65bd, 0.2rem 0.1rem 1rem #ff65bd,
-      0 -0.5rem 2rem #ff2483, 0 0.5rem 3rem #ff2483;
- }
-      body {
-	background: url(img/bg_ps1.jpg) no-repeat, linear-gradient(#123, #321);
-    background-size: cover;
-	background-attachment: fixed;
-	}
-	img{  
-    width: 140;
-    height: 140;
-	margin: 0.25em;
-	transition: all 0.3s linear;
-	border: solid 4px transparent;
-	border-radius: 10px
-	}
-    img:hover {
-	border: solid 4px #FDF5E6;
-    transform: scale(1.2,1.2);
-	}
-    img:active {
-	border: solid 4px #DEB887;
-    transition: background 0s;
-    }
-    tr, th {
-    width: 200px;
-    position: absolute; 
-	margin-left: -0px;
-    } 
-	.container {
-    max-width: 1270px;
-    margin: auto;
-    height: 1000px;
-    }
-	 #mySearch {
-	 width: 100%;
-	 margin: auto;
-     font-size: 15px;
-     padding: 5px;
-     border: 2px solid #ddd;
-	}
-		button{	
-	background: #BDB76B;
-	padding: 10px 10px;
-	border: 1px double black;
-	border-radius: 15px;
-	outline: 1px double white;
-	box-shadow: 2px 2px 2px 2px black;
-	margin: 3px;
-	font-weight: bold;
-	transition: all 0.1s linear;
-	position: relative;
-	overflow: hidden;
-	}
-	button:hover {
-	background: #BDB700;	
-	}
-	button:active{	
-	background: #F5DE00;
-	color: white;
-	box-shadow: 1px 1px 1px 1px black;
-	transform: translateY(2px);
-	}
-	button:after {
-	content: "";
-	display: block;
-	width: 20px;
-	height: 80px;
-	margin-left: 50px;
-	background: #fff;
-	background: linear-gradient(
-      to bottom,
-      rgba(255, 255, 255, 0.5) 0%,
-      rgba(255, 255, 255, 1) 50%,
-      rgba(255, 255, 255, 0.5) 100%
-	);
-	left: -40px;
-	top: -25;
-	z-index: 1;
-	transform: rotate(45deg);
-	position: absolute;
-	animation: movingFlare 2s ease-in-out 0.05s infinite;
-	}
- 	@keyframes movingFlare {
-	0% {
-    left: -30px;
-    margin-left: 0px;
-	}
-	30% {
-    left: 110%;
-    margin-left: 80px;
-	}
-	100% {
-    left: 110%;
-    margin-left: 80px;
-	}
-	}
-  </style>	
     <div style="align: center" class="container">
 	   <div style="align: center">
-          <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Поиск Игры..." title="Type in a category"></input>
+          <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Поиск Игры..." title="Введите название Игры для поиска"></input>
 	   </div>
-    <ul style="margin: 2em;" id="myMenu">
+    <ul style="margin: 2em;"id="myMenu">
 	<b><a href="ps1/quake_2.html" ><img src="ps1/img/quake_2.jpg" alt="button" title="Quake 2"></a></b>
 	<b><a href="ps1/Harry_Potter_and_the_Chamber_of_Secrets.html" ><img src="ps1/img/Harry_Potter_and_the_Chamber_of_Secrets.jpg" alt="button" title="Harry Potter and the Chamber of Secrets™"></a></b>
 	<b><a href="ps1/Road_Rash_Jailbreak.html" ><img src="ps1/img/Road_Rash_Jailbreak.jpg" alt="button" title="Road Rash: Jailbreak"></a></b> 
@@ -263,13 +163,20 @@
  	<b><a href="ps1/Driver.html" ><img src="ps1/img/Driver.jpg" alt="button" title="Driver™"></a></b>
  	<b><a href="ps1/Mortal_Kombat_Trilogy.html" ><img src="ps1/img/Mortal_Kombat_Trilogy.jpg" alt="button" title="Mortal Kombat™: Trilogy"></a></b>
  	<b><a href="ps1/Super_Shot_Soccer.html" ><img src="ps1/img/Super_Shot_Soccer.jpg" alt="button" title="Super Shot Soccer"></a></b>
-
+ 	<b><a href="ps1/Music_2000_Music_Creation.html" ><img src="ps1/img/Music_2000_Music_Creation.jpg" alt="button" title="Music 2000: Music Creation"></a></b>
 	<br>
 	<br>
-	<button style="margin: auto" onclick="topFunction()" id="myBtn" title="Go to top">НАВЕРХ</button>
 	<br>
 	<br>
 	</ul>
+	<button style="margin: auto" onclick="topFunction()" id="myBtn" title="ХЛЫСТАТЬ СТРАНИЦУ НАВЕРХ">НАВЕРХ</button>
+	<br>
+	<br>
+	<h2 align="center" style="color:#ffffff">Спасибо за просмотр страницы Игры PlayStation®1 для PlayStation®3</h2>
+	<br>
+	<hr>
+	<br>
+	<br>
 	</div>
 <script>
 function myFunction() {
@@ -309,7 +216,6 @@ function topFunction() {
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
 </script>
-
 
 </body>
  </html>
