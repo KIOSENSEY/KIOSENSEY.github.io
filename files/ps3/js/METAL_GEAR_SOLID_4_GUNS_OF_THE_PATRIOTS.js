@@ -31,10 +31,10 @@
 	var decoded08 = atob(str08);
 	var link08 = "http://catcut.net/go.php?h_i=12735&h_u=" + (str08);
 	
-		var str09 = "";
+		var str09 = "aHR0cHM6Ly8xZHJ2LmRlL3UvcyFBaklBa3MtTWFHWTBnaF81MzJmTEdsZE5JWGdSP2U=";
 	var decoded09 = atob(str09);
 	var link09 = "http://q32.ru/65495/" + "http://catcut.net/go.php?h_i=12735&h_u=" + (str09);
 	
-		var str010 = "aHR0cHM6Ly8xZHJ2LmRlL3UvcyFBaklBa3MtTWFHWTBnaF81MzJmTEdsZE5JWGdSP2U=";
+		var str010 = "aHR0cHM6Ly9kaXNrLnlhbmRleC5ydS9kLy1rNTZmd1duLW9LVndB";
 	var decoded010 = atob(str010);
 	var link010 = "http://ouo.io/qs/iCKfnfRr?s=" + "http://catcut.net/go.php?h_i=12735&h_u=" + (str010);		
