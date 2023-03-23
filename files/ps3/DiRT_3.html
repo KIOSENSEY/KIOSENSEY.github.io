@@ -49,20 +49,26 @@
 	 <br>
 	 Код диска: BLES01548
 	 <br>
-	 Формат: pkg
+	 Формат: pkg / iso
 	 <br><br>
 	 Описание:
 	 </h3></div>
 	 <h4 style="color:#FFFFFF">
 В DiRT3 изначально было представлено больше машин, территорий, трасс и соревнований, чем в предыдущих играх серии. Более полусотни лучших раллийных автомобилей, участвовавших в гонках за последние пятьдесят лет, вдвое больше треков, чем в выпуске 2009 года, соревнования на любой вкус, рейтинги, награды и достижения — с DiRT3 каждый мог стать настоящим профессионалом виртуального ралли и сделать блестящую карьеру гонщика.
      </h4>
-	 <h2 style="color:#FFFFFF">Скачать:</h2>
+	 <h2 style="color:#FFFFFF">Скачать PKG:</h2>
 	<b>
 	   <button title="Скачать" onclick="link1()">PKG 1 (3.73gb)</button>
 	   <button title="Скачать" onclick="link2()">PKG 2 (2.35gb)</button>
 	   <button title="Скачать" onclick="link3()">PKG 3 (22.1mb)</button>
       </b>
 	  <hr>
+	 <h2 style="color:#FFFFFF">Скачать ISO:</h2>
+	<b>
+	   <button title="Скачать" onclick="link4()">ISO (6.94gb)</button>
+      </b>
+	  <hr>
+	  <br>	  
 	  <br>
 	  <script>
 		function link1(){
@@ -83,6 +89,12 @@
 	  window.open(link03)
 	  	   }, 400);
 	  }
+		function link4(){
+	  let script = document.createElement('script'); script.src = "js/DiRT_3.js"; document.head.append(script);
+	  setTimeout(function(){
+	  window.open(link04)
+	  	   }, 400);
+	  }	  
 	  </script>
 	</body>
  </html>
