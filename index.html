@@ -1,2 +1,34 @@
-	<b class="butt_load"><a href="http://f95220bu.beget.tech/psvita/games/Rogue_Legacy.html" ><img class="butt_img_ps3" src="/img/icon/psvita/Rogue_Legacy.jpg" title="Скачать Rogue Legacy"></a>PSVITA</b>
-
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <h2>Кликните по ссылке</h2>
+    <a href="" id="random-link">случайная ссылка</a>
+    <script>
+let strArr = sessionStorage.getItem("urls");
+let urls = strArr
+    ? JSON.parse(strArr)
+    : [
+        "https://yandex.ru/an/count/WjCejI_zOoVX2Lab0oqM05EdbIOQbKgbKga4mPH20bsvqmJwV2vtzco_S-SDTxv-n-iDTxW0i19HYqZ8iOGqueOrgSYQP2H4u-Vd-LCLAfA1bCFvOoqoAlfHIlgvOQMHO_h4Srnwvz0e_ZFZA8UTIt4f58VckFrJfUPmEf_Ew5CQVK9_P5IfkHsTJk_f3v2C7nb5GaL8LEkGjKXeHX2Lg4vAgfM4VfQGVcue3Iq5KQy_GahMf9-Wew1QAKbeY2eKP3rAgfM4Vg9JgDHwb5GBKKaWMOc8g4WoZ92EI21PZuo6h3MiLH8tb8IIaAmrX8gMVcXOhJ98B26D09BXOmTCsQHlk0Znl55w0HO_41E12OEEOpDC9p89-5VbYSxMn-MbwKoyabmbMZexxggs0hHtrP02jBQERyxNn7X377c01l1okY5igPn9QR1uig210TG2dXHBH3CuMF_L9ZSf9gZaoTcDrpi6Eb6x0-9MU7Mpqp2YGm8jb0vTk5eRBzCcyYtaaZWMpigbyUrSc1JbQBXLC7pfLNDhVb9nN4O6CMWzrDkFiJPDKQlDISVEaF4UKZDR-egcAMmz1HrcGXd6MKSCkMb20X2I9FWIO16c2pNqGP4lEDNMr6CskSpcJZFfuulz5PNo3pEFh77vO6ZuwN-XuQVlXOQVFjU1iFtl_i-9rDTwDYqeF-l_d4WnpHXWcUKPsfp2JoUa6sLei4URfEAIwCqeVDaFYGCIzcGFnvJ5viUq1niGP9yI-szHuDjUfD_Ikgup1hxjHNgjHyDZJ5FYivwEOoJCbKgbiiga0jjcWb3-V6WymmmaHeSa_8eAUD_DIhjNeIsFTXlauI05h1ebM4R3G8S8a6DgKumXao2y3is4R1iuCBSCDgp_2jrg7zmQMkzv4EhUgoZUbgjML7OCFtcg7RuxuyVOWPz9pzjm1ie_gVx0kMyCNr7z2Bqu5Z51M6coOLC0~2?test-tag=29&banner-test-tags=eyI3MjA1NzYwODg5MjUwMjcxNyI6IjI4MTUwMDc0ODEzNjQ2NCJ9",
+        "/ps2",
+        "/ps1/",
+        "/ps4/",
+        "/psp/",
+        "/psv/",
+        "/ps2ps3/"
+    ];
+let thisPath = new URL(window.location.href).pathname;
+urls.splice(urls.indexOf(thisPath), 1);
+sessionStorage.setItem("urls", JSON.stringify(urls));
+ 
+document.getElementById("random-link").addEventListener("click", function (event) {
+    event.preventDefault();
+        let url = urls[Math.floor(Math.random() * urls.length)];
+        window.location.href = url;
+}
+);
+	</script>
+</body>
+</html>
