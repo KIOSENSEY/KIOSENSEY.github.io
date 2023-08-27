@@ -1,0 +1,45 @@
+<?php
+include $_SERVER['DOCUMENT_ROOT']."/php/vars_ban.php";
+
+?>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="/css/style.css">
+				<div class="icon_block">			
+			<a href="/" ><img class="icon" src="/img/main/kiosensey.png"></a>	
+		</div>
+	<div class="autorizat">	
+		<div style="display:<?= $val == 0 ? 'block':'none' ?>" >
+			<? echo "<h6>"."Добро пожаловать". "\n". ($_SESSION['login'])."</h6>"; ?>
+		<!--<button class="butt_chat" onclick="window.open ('/chat/','_blank')">ЧАТ</button>-->
+		<button class="butt_order" onclick="window.open ('/orders/','_blank')">СТОЛ ЗАКАЗОВ</button>
+		</div>
+	<div class="authorization" style="display:<?= $val == 1 ? 'block':'none' ?>" >
+		<form action="/authorization/" method="get" enctype="multipart/form-data">
+			<input class="input" name="login" placeholder="Логин">
+			<input class="input" type="password" name="password" placeholder="Пароль">
+			<input class="button_autoriz" type="submit" value="Войти"> 
+		</form>	
+		<!--<button class="butt_chat" onclick="window.open ('/chat/','_blank')">ЧАТ</button>-->
+		<button class="butt_order" onclick="window.open ('/orders/','_blank')">СТОЛ ЗАКАЗОВ</button>
+	</div>
+	<a style="position:absolute;width: 10px;height: 10px;top: 10px;left:720px;right:100px" href="/chat/"><img class="image_low" src="/img/main/chat.png" alt=""></a>
+	<a style="position:absolute;width: 100px;height: 1px;top: 15px;left:800px;right:100px" >В ЧАТЕ: <section  id="UshersPresents" class="mainMessageUser"></section></a>
+	<script>
+		var old_usher_prez = "";
+			function show_ushers(){
+				$.ajax({
+				url: "/chat/ushers_prez.txt",
+				cache: false,
+				success: function(html){
+				if (html != old_usher_prez) {               
+                $("#UshersPresents").html(old_usher_prez = html);
+
+				}
+				}
+			});
+		}
+		$(document).ready(function(){  
+            show_ushers();  
+            setInterval('show_ushers()',1000);  
+        }); 
+		</script>

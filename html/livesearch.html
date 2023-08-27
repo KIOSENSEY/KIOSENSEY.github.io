@@ -1,0 +1,29 @@
+<?php
+ $xmlDoc=new DOMDocument();
+ $xmlDoc->load("./links.xml");
+ $x=$xmlDoc->getElementsByTagName('link');
+ $q=$_GET["q"];
+ if (mb_strlen($q.'UTF-8') > 0) {
+  $hint=''; //подсказка
+  for($i=0; $i<($x->length); $i++) {
+   $y=$x->item($i)->getElementsByTagName('title');
+   $z=$x->item($i)->getElementsByTagName('url');
+   if ($y->item(0)->nodeType==1) {  
+	$url = $z->item(0)->childNodes->item(0)->nodeValue;
+    $anchor = $y->item(0)->childNodes->item(0)->nodeValue;
+    if (!empty($anchor) and !empty($q) and mb_stristr($anchor,$q,false,'UTF-8')) { //найти вхождения
+     if (empty($hint)) {
+      $hint = '<a href="/'.$p.'/games/'.$url.'.html" target="_blank"><img class="'.$p.'" src="/img/icon/'.$p.'/'.$url.'.jpg"></a>';
+     }  
+    }
+   }
+  }
+ }
+ if (empty($hint)) {
+  $response = 'Ничего не найдено.';
+ } 
+ else {
+  $response = $hint;
+ }
+ echo $response;
+?>

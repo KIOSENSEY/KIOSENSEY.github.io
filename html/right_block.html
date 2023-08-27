@@ -1,0 +1,34 @@
+<?php
+include $_SERVER['DOCUMENT_ROOT']."/php/vars_ban.php";
+?>
+<link rel="stylesheet" href="/css/style.css">
+				<a href="https://vk.com/play_unity"><img class="image_low" src="/img/main/vk.png" alt=""></a>
+				<!--<a href="https://discord.gg/Yxtfnjad8u"><img class="image_low" src="/img/main/discord.png" alt=""></a>-->
+				
+<style>
+	.box{
+		padding-left: 35px;
+	}
+</style>	
+<?
+	
+define ("MAX_IDLE_TIME", "1"); //Время в минутах, которое сессия считается "онлайн"
+define ("SESSION_PREFIX","sess_"); //Начало имен всех файлов сессий, обычно такое и есть
+define ("SESSION_PATH", "/tmp"); //Путь для сессий без слеша в конце
+
+function getOnlineUsers() {
+ if ($directory = opendir(session_save_path())) {
+  $count = 0;
+  $n = strlen(SESSION_PREFIX);
+  while (false !== ($file = readdir($directory))) {
+   if (substr($file,0,$n)==SESSION_PREFIX) {
+    if (time()-fileatime(session_save_path().'/'.$file) < MAX_IDLE_TIME*60) { $count++; }
+   } 
+  }
+  closedir ($directory);
+  return $count;
+ } 
+ else { return false; }
+}
+echo '<b class="box" >'.getOnlineUsers().'</b>';
+?>
